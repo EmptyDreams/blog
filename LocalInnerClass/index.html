@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>空梦</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="空梦">
+  <title>个人对局部内部类的一些理解 | 空梦</title>
+  <meta name="keywords" content=" JAVA , 类 ">
+  <meta name="description" content="个人对局部内部类的一些理解 | 空梦">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="rmhvfS2cfH">
 <meta property="og:type" content="website">
@@ -63,7 +63,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -211,12 +211,59 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-LocalInnerClass" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#自我介绍"><span class="toc-text">自我介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于这个博客"><span class="toc-text">关于这个博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#统计"><span class="toc-text">统计</span></a></li></ol>
+        <h1 class="article-title">个人对局部内部类的一些理解</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="Java">Java</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">JAVA</a>
+            
+            <a class="color2">类</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-27 21:56:37'>2020-03-27 21:20</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是局部内部类"><span class="toc-text">什么是局部内部类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部类的限制"><span class="toc-text">内部类的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他人的见解"><span class="toc-text">其他人的见解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-初始化问题"><span class="toc-text">1.初始化问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-高深解法"><span class="toc-text">2.高深解法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#个人讲解"><span class="toc-text">个人讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#深度理解“复制”"><span class="toc-text">深度理解“复制”</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改外部值的方法"><span class="toc-text">修改外部值的方法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -229,14 +276,110 @@
     }
 </style>
 </div>
-            <p>&emsp;&emsp;经过一番努力，我成功的用Hexo搭建了一个自己的博客，今后我将不定时的发布一些内容！</p>
-<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>&emsp;&emsp;看我的博客名字就知道，我的网名是“空梦”，虽然没有太多开发经验，但是我也有一些自己的小作品，大家感兴趣的话可以去Bilibili看我发布的视频。<br>&emsp;&emsp;写这个博客的时间是2020年三月，在一年前，我开始了我的第一个“大工程”——现代工业。一个MC模组（1.12.2），在写代码的时候，不仅学到了很多新知识，也结交了许多有意思的、博学的网友。</p>
-<h2 id="关于这个博客"><a href="#关于这个博客" class="headerlink" title="关于这个博客"></a>关于这个博客</h2><p>&emsp;&emsp;这个博客预计是什么东西都会往这里发，子内容我尽量弄一个独立的链接，只在这里放简洁和链接，这样子就可以节省很大的篇幅了。<br>&emsp;&emsp;我现在也是刚刚接触Hexo、Markdown这些东西，所以还不是很熟练，如果大家有什么经验的话可以联系我，我会挑出一些很实用的放在我的博客里面，不要忘记告诉我你的名字，不然我就没法在这里写出经验的出处了哦~~<br>&emsp;&emsp;另外评论功能现在还没有加上，我还在物色满意的插件，找到之后会想办法放到博客里面的。<br>&emsp;&emsp;因为我发的大部分内容应该都是有关编程的，所以我就不打“编程”这个Tag了，相对的，和编程没关系的我会打上“非编程”的Tag。</p>
-<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><p>到目前为止已经写了<code class="article_number"></code>篇文章</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;很多人对于局部内部类访问局部变量的限制有些疑惑，这里我就简单的解答以下。</p>
+<a id="more"></a>
 
-        </article>
-        
-        
+<h2 id="什么是局部内部类"><a href="#什么是局部内部类" class="headerlink" title="什么是局部内部类"></a>什么是局部内部类</h2><p>&emsp;&emsp;和局部变量类似，局部内部类指的就是在方法体中声明的类，包括匿名内部类和非匿名内部类，例如以下代码中的“A”、“new Object(){}”、“lambda表达式” 都是局部内部类：（以下简称内部类）</p>
+<pre><code class="java">public class Test {
+    public void run() {
+        class A { }
+        new Object() { };
+        List&lt;?&gt; list = new ArrayList&lt;&gt;();
+        list.forEach(System.out::println);
+    }
+}</code></pre>
+<h2 id="内部类的限制"><a href="#内部类的限制" class="headerlink" title="内部类的限制"></a>内部类的限制</h2><p>&emsp;&emsp;很多人都知道的的一个内部类的使用限制就是不能修改局部变量，比如下面这段代码就是错误的：</p>
+<pre><code class="java">//代码块 A1
+public void run() {
+    int k = 0;
+    new Object() {
+        {
+            System.out.println(k);
+            k = 1;
+        }
+    };
+}</code></pre>
+<p>&emsp;&emsp;编译器会毫不客气的抛出==Variable ‘k’ is accessed from within inner class, needs to be final or effectively final==。<br>&emsp;&emsp;显而易见，错误的原因是k没有被final修饰，那到底时什么原因导致内部类不能修改局部变量呢？同时需要注意的是导致编译错误的是“k = 1”而非“println(k)”。</p>
+<h2 id="其他人的见解"><a href="#其他人的见解" class="headerlink" title="其他人的见解"></a>其他人的见解</h2><h5 id="1-初始化问题"><a href="#1-初始化问题" class="headerlink" title="1.初始化问题"></a>1.初始化问题</h5><p>&emsp;&emsp;这个问题我曾经请教过其它人，得到的回复是：</p>
+<blockquote>
+<p>&emsp;&emsp;我认为是因为在创建内部类的时候局部变量没有得到初始化，即值是不确定的，所以导致编译错误。</p>
+</blockquote>
+<p>&emsp;&emsp;但是我很快否定了这个说法，因为这样的说法无法解释“println(k)”这样子的代码可以通过编译。</p>
+<h5 id="2-高深解法"><a href="#2-高深解法" class="headerlink" title="2.高深解法"></a>2.高深解法</h5><p>&emsp;&emsp;网上有很多关于这个问题的“高深解法”，<a href="https://blog.csdn.net/dazhaoDai/article/details/83097017" target="_blank" rel="noopener">比如这里</a>，但是这些说辞不适用于新手或者是水平还没有达到相对应的地点的人，这里我就引用一部分内容，后文中我将围绕这一小部分内容在代码层面进行讲解：</p>
+<blockquote>
+<p>&emsp;&emsp;内部类并不是直接使用传递进来的参数，而是将传递进来的参数通过自己的构造器备份到自己内部，表面看是同一个变量，实际调用的是自己的属性而不是外部类方法的参数，如果在内部类中，修改了这些参数，并不会对外部变量产生影响，仅仅改变局部内部类中备份的参数。但是在外部调用时发现值并没有被修改，这种问题就会很尴尬，造成数据不同步。所以使用final避免数据不同步的问题。<br>————————————————<br>版权声明：本文为CSDN博主「T9的第三个三角」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/dazhaoDai/article/details/83097017" target="_blank" rel="noopener">https://blog.csdn.net/dazhaoDai/article/details/83097017</a></p>
+</blockquote>
+<h2 id="个人讲解"><a href="#个人讲解" class="headerlink" title="个人讲解"></a>个人讲解</h2><p>&emsp;&emsp;上面这段话对于一部分人可能仍然很难理解，不要担心，下面这些内容会对这一段话进行展开。<br>&emsp;&emsp;上文中说内部类中引用外部局部变量是一个拷贝，这句话可以用下面的代码理解：</p>
+<pre><code class="java">//代码块 A2 | 实际与A1相同
+public void run() {
+    int k = 0;
+    new Object() {
+        //final int k = k;
+        {
+            System.out.println(k);
+            k = 1;
+        }
+    }
+}</code></pre>
+<p>&emsp;&emsp;这样子就可以比较直观的理解“拷贝”的含义，注释掉的代码可以理解成一个隐式声明。相当于编译器为你自动复制了可访问的局部变量的值。<br>&emsp;&emsp;那这个声明为什么不能更改呢？这就涉及到了上文中提到的同步问题，如果你在内部类中修改了这个值，你修改的是复制后的值，在内部类的外部根部无法观测到这个改变，如果编译器允许你的更改，那就容易造成一个不太容易发现的BUG：我明明修改了这个值，为什么它没有变化？为了彻底避免这个问题，所以就干脆让这个声明是不可以修改的了。</p>
+<h5 id="深度理解“复制”"><a href="#深度理解“复制”" class="headerlink" title="深度理解“复制”"></a>深度理解“复制”</h5><p>&emsp;&emsp;这里说的复制是什么意思呢？在了解复制前我们要首先了解我们是怎么访问对象的：</p>
+<pre><code class="java">Object o = new Object();
+Object o2 = new Object();
+System.out.println(&quot;o == o2 is &quot; + o == o2);    //false
+o = o2;
+System.out.println(&quot;o == o2 is &quot; + o == o2);    //true</code></pre>
+<p>&emsp;&emsp;这段代码的输出结果代表了什么？在修改”o”的值后”o”与”o2”的地址是一样的，也就是说”o = o2”并没有触发深度复制，而是知识简单的让”o”也指向了”o2”所指向的值。<br>&emsp;&emsp;显而易见，”o”和”o2”并没有直接存储一个对象，我们可以简单的认为存储的对象的地址（实际上没有这么简单，具体方法略微有些复杂，读者可以自行查阅资料），”o = o2”这个语句就是将”o2”指向的对象的地址复制给”o”，这时候修改两者中的任意一个，另一个也会收到影响。<br>&emsp;&emsp;同样，编译器为我们复制变量的时候也没有进行深度复制，而是进行简单的复制，这个特性我们下文中会再说到。</p>
+<h2 id="修改外部值的方法"><a href="#修改外部值的方法" class="headerlink" title="修改外部值的方法"></a>修改外部值的方法</h2><ol>
+<li>把这个值变成全局变量，这样子就可以随意更改。但是并不建议这么做因为这样子写不但性能不高，还容易让代码变得晦涩难懂。</li>
+<li>将要修改的量声明为数组。细心的小伙伴写代码的时候可能会发现下面的情况：<pre><code class="java">new ArrayList&lt;int[]&gt;();        //right
+new ArrayList&lt;int&gt;();        //error</code></pre>
+&emsp;&emsp;第一行代码可以通过编译而第二行不可以，具体原因这里不再解释，读者只要明白int和int[]的区别就可以了。在Java中int是基本类型，但是int[]并不是，可以当作对象处理，所以int[]也可以当作泛型的参数。<br>&emsp;&emsp;知道这个有什么用呢？很简单，被final修饰的数组虽然我们不能再修改它的地址，但是我们可以修改数组中存储的数据，比如说我们可以写出来下面的代码：<pre><code class="java">public void run() {
+final int[] k = { 0 };
+new Object() {
+    { k[0] = 1; }
+};
+}</code></pre>
+</li>
+<li>使用类存储数据，第二种方法看起来很正确，但是很容易混淆代码的意图，我们同样根据复制的原理，将值存在一个类中，然后我们通过这个类访问值即可进行修改：<pre><code class="java">public void run() {
+final AtomicInteger k = new AtomicInteger(0);
+new Object() {
+    { k.set(1); }
+};
+}</code></pre>
+</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证。 </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>个人对局部内部类的一些理解</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.7k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="空梦">空梦</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-03-27, 21:20:17</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-27, 21:56:37</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/LocalInnerClass/" title="个人对局部内部类的一些理解">http://emptydreams.github.io/LocalInnerClass/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 Yelog</p>
