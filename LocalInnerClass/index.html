@@ -239,7 +239,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-03-27 21:56:37'>2020-03-27 21:20</time>
+        创建时间:<time class="date" title='更新时间: 2020-03-28 21:06:19'>2020-03-27 21:20</time>
         
     </div>
     <div class="article-meta">
@@ -263,7 +263,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是局部内部类"><span class="toc-text">什么是局部内部类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部类的限制"><span class="toc-text">内部类的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他人的见解"><span class="toc-text">其他人的见解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-初始化问题"><span class="toc-text">1.初始化问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-高深解法"><span class="toc-text">2.高深解法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#个人讲解"><span class="toc-text">个人讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#深度理解“复制”"><span class="toc-text">深度理解“复制”</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改外部值的方法"><span class="toc-text">修改外部值的方法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是局部内部类"><span class="toc-text">什么是局部内部类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部类的限制"><span class="toc-text">内部类的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他人的见解"><span class="toc-text">其他人的见解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-初始化问题"><span class="toc-text">1.初始化问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-高深解法"><span class="toc-text">2.高深解法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#个人讲解"><span class="toc-text">个人讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#深度理解“复制”"><span class="toc-text">深度理解“复制”</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改外部值的方法"><span class="toc-text">修改外部值的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-把这个值变成全局变量："><span class="toc-text">1.把这个值变成全局变量：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-将要修改的量声明为数组："><span class="toc-text">2.将要修改的量声明为数组：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-使用类存储数据："><span class="toc-text">3.使用类存储数据：</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -332,25 +332,24 @@ System.out.println(&quot;o == o2 is &quot; + o == o2);    //false
 o = o2;
 System.out.println(&quot;o == o2 is &quot; + o == o2);    //true</code></pre>
 <p>&emsp;&emsp;这段代码的输出结果代表了什么？在修改”o”的值后”o”与”o2”的地址是一样的，也就是说”o = o2”并没有触发深度复制，而是知识简单的让”o”也指向了”o2”所指向的值。<br>&emsp;&emsp;显而易见，”o”和”o2”并没有直接存储一个对象，我们可以简单的认为存储的对象的地址（实际上没有这么简单，具体方法略微有些复杂，读者可以自行查阅资料），”o = o2”这个语句就是将”o2”指向的对象的地址复制给”o”，这时候修改两者中的任意一个，另一个也会收到影响。<br>&emsp;&emsp;同样，编译器为我们复制变量的时候也没有进行深度复制，而是进行简单的复制，这个特性我们下文中会再说到。</p>
-<h2 id="修改外部值的方法"><a href="#修改外部值的方法" class="headerlink" title="修改外部值的方法"></a>修改外部值的方法</h2><ol>
-<li>把这个值变成全局变量，这样子就可以随意更改。但是并不建议这么做因为这样子写不但性能不高，还容易让代码变得晦涩难懂。</li>
-<li>将要修改的量声明为数组。细心的小伙伴写代码的时候可能会发现下面的情况：<pre><code class="java">new ArrayList&lt;int[]&gt;();        //right
+<h2 id="修改外部值的方法"><a href="#修改外部值的方法" class="headerlink" title="修改外部值的方法"></a>修改外部值的方法</h2><h5 id="1-把这个值变成全局变量："><a href="#1-把这个值变成全局变量：" class="headerlink" title="1.把这个值变成全局变量："></a>1.把这个值变成全局变量：</h5><p>&emsp;&emsp;这样子就可以随意更改，但是并不建议这么做因为这样子写不但性能不高，还容易让代码变得晦涩难懂。</p>
+<h5 id="2-将要修改的量声明为数组："><a href="#2-将要修改的量声明为数组：" class="headerlink" title="2.将要修改的量声明为数组："></a>2.将要修改的量声明为数组：</h5><p>&emsp;&emsp;细心的小伙伴写代码的时候可能会发现下面的情况：</p>
+<pre><code class="java">new ArrayList&lt;int[]&gt;();      //right
 new ArrayList&lt;int&gt;();        //error</code></pre>
-&emsp;&emsp;第一行代码可以通过编译而第二行不可以，具体原因这里不再解释，读者只要明白int和int[]的区别就可以了。在Java中int是基本类型，但是int[]并不是，可以当作对象处理，所以int[]也可以当作泛型的参数。<br>&emsp;&emsp;知道这个有什么用呢？很简单，被final修饰的数组虽然我们不能再修改它的地址，但是我们可以修改数组中存储的数据，比如说我们可以写出来下面的代码：<pre><code class="java">public void run() {
-final int[] k = { 0 };
-new Object() {
-    { k[0] = 1; }
-};
+<p>&emsp;&emsp;第一行代码可以通过编译而第二行不可以，具体原因这里不再解释，读者只要明白int和int[]的区别就可以了。在Java中int是基本类型，但是int[]并不是，可以当作对象处理，所以int[]也可以当作泛型的参数。<br>&emsp;&emsp;知道这个有什么用呢？很简单，被final修饰的数组虽然我们不能再修改它的地址，但是我们可以修改数组中存储的数据，比如说我们可以写出来下面的代码：</p>
+<pre><code class="java">public void run() {
+    final int[] k = { 0 };
+    new Object() {
+        { k[0] = 1; }
+    };
 }</code></pre>
-</li>
-<li>使用类存储数据，第二种方法看起来很正确，但是很容易混淆代码的意图，我们同样根据复制的原理，将值存在一个类中，然后我们通过这个类访问值即可进行修改：<pre><code class="java">public void run() {
-final AtomicInteger k = new AtomicInteger(0);
-new Object() {
-    { k.set(1); }
-};
+<h5 id="3-使用类存储数据："><a href="#3-使用类存储数据：" class="headerlink" title="3.使用类存储数据："></a>3.使用类存储数据：</h5><p>&emsp;&emsp;第二种方法看起来很正确，但是很容易混淆代码的意图，我们同样根据复制的原理，将值存在一个类中，然后我们通过这个类访问值即可进行修改：</p>
+<pre><code class="java">public void run() {
+    final AtomicInteger k = new AtomicInteger(0);
+    new Object() {
+        { k.set(1); }
+    };
 }</code></pre>
-</li>
-</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证。 </span>
@@ -364,7 +363,7 @@ new Object() {
     <p><span class="copy-title">文章字数:</span><span class="post-count">1.7k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="空梦">空梦</a></p>
     <p><span class="copy-title">发布时间:</span>2020-03-27, 21:20:17</p>
-    <p><span class="copy-title">最后更新:</span>2020-03-27, 21:56:37</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-28, 21:06:19</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/LocalInnerClass/" title="个人对局部内部类的一些理解">http://e0pwme.coding-pages.com/LocalInnerClass/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
