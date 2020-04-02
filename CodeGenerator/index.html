@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>������������ṹչʾ | 空梦</title>
-  <meta name="keywords" content=" JAVA , �� , ��� ">
-  <meta name="description" content="������������ṹչʾ | 空梦">
+  <title>代码生成器类结构展示 | 空梦</title>
+  <meta name="keywords" content=" JAVA , 类 , 设计 ">
+  <meta name="description" content="代码生成器类结构展示 | 空梦">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="rmhvfS2cfH">
 <meta property="og:type" content="website">
@@ -126,7 +126,7 @@
     
         
             
-            <li><div data-rel="����">����<small>(1)</small></div>
+            <li><div data-rel="晨曦">晨曦<small>(1)</small></div>
                 
             </li>
             
@@ -152,7 +152,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="2">
-<input type="hidden" id="yelog_site_word_count" value="1.8k">
+<input type="hidden" id="yelog_site_word_count" value="1.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -192,15 +192,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color3">��</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">���</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color2">类</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">设计</a>
     </li>
     
     <div class="clearfix"></div>
@@ -209,11 +205,11 @@
     
     <nav id="title-list-nav">
         
-        <a  class="���� "
+        <a  class="晨曦 "
            href="/CodeGenerator/"
-           data-tag="JAVA,��,���"
+           data-tag="JAVA,类,设计"
            data-author="" >
-            <span class="post-title" title="������������ṹչʾ">������������ṹչʾ</span>
+            <span class="post-title" title="代码生成器类结构展示">代码生成器类结构展示</span>
             <span class="post-date" title="2020-04-02 22:11:32">2020/04/02</span>
         </a>
         
@@ -239,7 +235,7 @@
     <div class="pjax">
         <article id="post-CodeGenerator" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">������������ṹչʾ</h1>
+        <h1 class="article-title">代码生成器类结构展示</h1>
     
     <div class="article-meta">
         
@@ -247,7 +243,7 @@
         
         <span class="book">
             
-                <a  data-rel="����">����</a>
+                <a  data-rel="晨曦">晨曦</a>
             
         </span>
         
@@ -256,21 +252,21 @@
             
             <a class="color5">JAVA</a>
             
-            <a class="color3">��</a>
+            <a class="color2">类</a>
             
-            <a class="color4">���</a>
+            <a class="color3">设计</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-02 22:12:04'>2020-04-02 22:11</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-02 22:13:14'>2020-04-02 22:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:82</span>
+        <span>字数:243</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -289,7 +285,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#�����������u����ͼ��"><span class="toc-text">�����������ṹ����ͼ��</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXStruct"><span class="toc-text">1.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-CXClass��"><span class="toc-text">2.CXClass��</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码生成器结构如下图："><span class="toc-text">代码生成器结构如下图：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXStruct"><span class="toc-text">1.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-CXClass："><span class="toc-text">2.CXClass：</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -305,45 +301,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="�����������u����ͼ��"><a href="#�����������u����ͼ��" class="headerlink" title="�����������ṹ����ͼ��"></a>�����������ṹ����ͼ��</h2><p><img src="http://i1.fuimg.com/714951/b911628e7c1d4f14.png" alt="��ṹͼ"></p>
+        <h2 id="代码生成器结构如下图："><a href="#代码生成器结构如下图：" class="headerlink" title="代码生成器结构如下图："></a>代码生成器结构如下图：</h2><p><img src="http://i1.fuimg.com/714951/b911628e7c1d4f14.png" alt="类结构图"></p>
 <hr>
-<h3 id="1-CXStruct"><a href="#1-CXStruct" class="headerlink" title="1.CXStruct"></a>1.CXStruct</h3><p>&emsp;&emsp;����������ĸ��࣬��abstract���Σ����п��ܰ����ķ�����Ԫ�����£�<br>| ���� | Ȩ�� | ���� | ���� | ���� | �Ƿ�Ϊabstract |<br>| —— | —— | —— | —— | —— | ——————– |<br>| Ԫ�� | private | String | name | �洢��ʶ�� | �� |<br>| Ԫ�� | private | Set&lt;EnumState&gt; | states | �洢״̬�� | �� |<br>| Ԫ�� | private | Set&lt;CXImport&gt; | imports | �洢��Ҫ����İ� | �� |<br>| ���� | public | String | toString() | ����ַ��� | �� |<br>| ���� | public | int | hashCode() | ��ȡhashCode() | �� |<br>| ���� | public | boolean | equals(Object) | �ж϶����Ƿ���� | �� |<br>| ���� | public | XXX | getter() | | �� |<br>| ���� | public | void | setter(XXX) | | �� |</p>
-<h3 id="2-CXClass��"><a href="#2-CXClass��" class="headerlink" title="2.CXClass��"></a>2.CXClass��</h3><p>&emsp;&emsp;������Ҫ����һ���࣬�̳���==CXStruct==�����п��ܰ����ķ�����Ԫ�����£�</p>
+<h3 id="1-CXStruct"><a href="#1-CXStruct" class="headerlink" title="1.CXStruct"></a>1.CXStruct</h3><p>&emsp;&emsp;所有数据类的父类，被abstract修饰，其中可能包含的方法及元素如下：<br>| 种类 | 权限 | 类型 | 名称 | 介绍 | 是否为abstract |<br>| —— | —— | —— | —— | —— | ——————– |<br>| 元素 | private | String | name | 存储标识符 | 否 |<br>| 元素 | private | Set&lt;EnumState&gt; | states | 存储状态量 | 否 |<br>| 元素 | private | Set&lt;CXImport&gt; | imports | 存储需要导入的包 | 否 |<br>| 方法 | public | String | toString() | 获得字符串 | 是 |<br>| 方法 | public | int | hashCode() | 获取hashCode() | 是 |<br>| 方法 | public | boolean | equals(Object) | 判断对象是否相等 | 是 |<br>| 方法 | public | XXX | getter() | | 否 |<br>| 方法 | public | void | setter(XXX) | | 否 |</p>
+<h3 id="2-CXClass："><a href="#2-CXClass：" class="headerlink" title="2.CXClass："></a>2.CXClass：</h3><p>&emsp;&emsp;代表需要生成一个类，继承自==CXStruct==，其中可能包含的方法及元素如下：</p>
 <table>
 <thead>
 <tr>
-<th>����</th>
-<th>����</th>
-<th>����</th>
-<th>����</th>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Ԫ��</td>
+<td>元素</td>
 <td>Set&lt;CXField&gt;</td>
 <td>fields</td>
-<td>�洢���а����ı���</td>
+<td>存储类中包含的变量</td>
 </tr>
 <tr>
-<td>Ԫ��</td>
+<td>元素</td>
 <td>Set&lt;CXFunction&gt;</td>
 <td>futcions</td>
-<td>�洢���а����ĺ���</td>
+<td>存储类中包含的函数</td>
 </tr>
 <tr>
-<td>Ԫ��</td>
+<td>元素</td>
 <td>Set&lt;CXInnerClass&gt;</td>
 <td>innerClass</td>
-<td>�洢���а������ڲ���</td>
+<td>存储类中包含的内部类</td>
 </tr>
 <tr>
-<td>����</td>
+<td>方法</td>
 <td>public</td>
 <td>XXX</td>
 <td>getter()</td>
 </tr>
 <tr>
-<td>����</td>
+<td>方法</td>
 <td>public</td>
 <td>void</td>
 <td>setter(XXX)</td>
@@ -358,12 +354,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>������������ṹչʾ</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">82</span></p>
+    <p><span class="copy-title">文章标题:</span>代码生成器类结构展示</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">243</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="空梦">空梦</a></p>
     <p><span class="copy-title">发布时间:</span>2020-04-02, 22:11:32</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-02, 22:12:04</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/CodeGenerator/" title="������������ṹչʾ">http://e0pwme.coding-pages.com/CodeGenerator/</a>
+    <p><span class="copy-title">最后更新:</span>2020-04-02, 22:13:14</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/CodeGenerator/" title="代码生成器类结构展示">http://e0pwme.coding-pages.com/CodeGenerator/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
@@ -407,7 +403,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#JAVA','#��','#���','#类',],
+            'data': ['#JAVA','#类','#设计',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
