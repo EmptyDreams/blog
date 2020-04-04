@@ -126,7 +126,7 @@
     
         
             
-            <li><div data-rel="Java">Java<small>(1)</small></div>
+            <li><div data-rel="晨曦">晨曦<small>(1)</small></div>
                 
             </li>
             
@@ -134,7 +134,7 @@
     
         
             
-            <li><div data-rel="晨曦">晨曦<small>(1)</small></div>
+            <li><div data-rel="Java">Java<small>(1)</small></div>
                 
             </li>
             
@@ -152,7 +152,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="2">
-<input type="hidden" id="yelog_site_word_count" value="1.9k">
+<input type="hidden" id="yelog_site_word_count" value="2.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -205,20 +205,20 @@
     
     <nav id="title-list-nav">
         
-        <a  class="Java "
-           href="/LocalInnerClass/"
-           data-tag="JAVA,类"
-           data-author="" >
-            <span class="post-title" title="个人对局部内部类的一些理解">个人对局部内部类的一些理解</span>
-            <span class="post-date" title="2020-03-27 21:20:17">2020/03/27</span>
-        </a>
-        
         <a  class="晨曦 "
            href="/CodeGenerator/"
            data-tag="JAVA,类,设计"
            data-author="" >
             <span class="post-title" title="代码生成器类结构展示">代码生成器类结构展示</span>
             <span class="post-date" title="2020-04-02 22:11:32">2020/04/02</span>
+        </a>
+        
+        <a  class="Java "
+           href="/LocalInnerClass/"
+           data-tag="JAVA,类"
+           data-author="" >
+            <span class="post-title" title="个人对局部内部类的一些理解">个人对局部内部类的一些理解</span>
+            <span class="post-date" title="2020-03-27 21:20:17">2020/03/27</span>
         </a>
         
     </nav>
@@ -261,12 +261,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-03 23:06:29'>2020-04-02 22:11</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-04 16:38:36'>2020-04-02 22:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:239</span>
+        <span>字数:592</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -285,7 +285,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码生成器结构如下图："><span class="toc-text">代码生成器结构如下图：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXStruct"><span class="toc-text">1.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-CXClass："><span class="toc-text">2.CXClass：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码生成器结构如下图："><span class="toc-text">代码生成器结构如下图：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXImport"><span class="toc-text">1.CXImport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-EnumState"><span class="toc-text">2.EnumState</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CXStruct"><span class="toc-text">3.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CXClass"><span class="toc-text">4.CXClass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-CXField"><span class="toc-text">5.CXField</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CXFunction"><span class="toc-text">6.CXFunction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-CXInnerClass"><span class="toc-text">7.CXInnerClass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-CXSentence"><span class="toc-text">8.CXSentence</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -301,10 +301,119 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="代码生成器结构如下图："><a href="#代码生成器结构如下图：" class="headerlink" title="代码生成器结构如下图："></a>代码生成器结构如下图：</h2><p><img src="http://i1.fuimg.com/714951/c01b812ea5a78765.png" alt="Markdown"></p>
+        <h2 id="代码生成器结构如下图："><a href="#代码生成器结构如下图：" class="headerlink" title="代码生成器结构如下图："></a>代码生成器结构如下图：</h2><p><img src="http://i2.tiimg.com/714951/c2c23f042adde03f.png" alt="Markdown"></p>
 <hr>
-<h3 id="1-CXStruct"><a href="#1-CXStruct" class="headerlink" title="1.CXStruct"></a>1.CXStruct</h3><p>所有数据类的父类，被abstract修饰，其中可能包含的方法及元素如下：<br>| 种类 | 权限 | 类型 | 名称 | 介绍 | 是否为abstract |<br>| —- | —- | —- | —- | —- | —- |<br>| 元素 | private | String | name | 存储标识符 | 否 |<br>| 元素 | private | Set&lt;EnumState&gt; | states | 存储状态量 | 否 |<br>| 元素 | private | Set&lt;CXImport&gt; | imports | 存储需要导入的包 | 否 |<br>| 方法 | public | String | toString() | 获得字符串 | 是 |<br>| 方法 | public | int | hashCode() | 获取hashCode() | 是 |<br>| 方法 | public | boolean | equals(Object) | 判断对象是否相等 | 是 |<br>| 方法 | public | XXX | getter() | | 否 |<br>| 方法 | public | void | setter(XXX) | | 否 |</p>
-<h3 id="2-CXClass："><a href="#2-CXClass：" class="headerlink" title="2.CXClass："></a>2.CXClass：</h3><p>代表需要生成一个类，继承自<strong>CXStruct</strong>，其中可能包含的方法及元素如下：</p>
+<h3 id="1-CXImport"><a href="#1-CXImport" class="headerlink" title="1.CXImport"></a>1.CXImport</h3><p>​        表示一个完整类名，用来表示需要导入的包：<code>java.lang.Object</code></p>
+<h3 id="2-EnumState"><a href="#2-EnumState" class="headerlink" title="2.EnumState"></a>2.EnumState</h3><p>表示一个元素的状态，当状态冲突时抛出运行期异常：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CLASS</td>
+<td>表示这是一个类</td>
+</tr>
+<tr>
+<td>INTERFACE</td>
+<td>表示这是一个接口</td>
+</tr>
+<tr>
+<td>ENUM</td>
+<td>表示这是一个枚举类</td>
+</tr>
+<tr>
+<td>FINAL</td>
+<td>表示该元素被final修饰</td>
+</tr>
+<tr>
+<td>ABSTRACT</td>
+<td>表示该元素被abstract修饰</td>
+</tr>
+<tr>
+<td>PUBLIC</td>
+<td>表示该元素被public修饰</td>
+</tr>
+<tr>
+<td>PRIVATE</td>
+<td>表示该元素被private修饰</td>
+</tr>
+<tr>
+<td>PROTECTED</td>
+<td>表示该元素被protected修饰</td>
+</tr>
+</tbody></table>
+<h3 id="3-CXStruct"><a href="#3-CXStruct" class="headerlink" title="3.CXStruct"></a>3.CXStruct</h3><p>所有数据类的父类，被<code>abstract</code>修饰，其中可能包含的方法及元素如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">种类</th>
+<th align="left">类型</th>
+<th align="left">名称</th>
+<th align="left">介绍</th>
+<th align="center">是否为<code>abstract</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">元素</td>
+<td align="left">String</td>
+<td align="left">name</td>
+<td align="left">存储标识符</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">元素</td>
+<td align="left">Set&lt;EnumState&gt;</td>
+<td align="left">states</td>
+<td align="left">存储状态量</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">元素</td>
+<td align="left">Set&lt;CXImport&gt;</td>
+<td align="left">imports</td>
+<td align="left">存储需要导入的包</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public String</td>
+<td align="left">toString()</td>
+<td align="left">获得字符串</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public int</td>
+<td align="left">hashCode()</td>
+<td align="left">获取hashCode()</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public boolean</td>
+<td align="left">equals(Object)</td>
+<td align="left">判断对象是否相等</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public XXX</td>
+<td align="left">getter()</td>
+<td align="left"></td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public void</td>
+<td align="left">setter(XXX)</td>
+<td align="left"></td>
+<td align="center">否</td>
+</tr>
+</tbody></table>
+<h3 id="4-CXClass"><a href="#4-CXClass" class="headerlink" title="4.CXClass"></a>4.CXClass</h3><p>代表需要生成一个类，继承自<code>CXStruct</code>，其中可能包含的方法及元素如下：</p>
 <table>
 <thead>
 <tr>
@@ -334,17 +443,108 @@
 </tr>
 <tr>
 <td>方法</td>
-<td>public</td>
-<td>XXX</td>
-<td>getter()</td>
+<td>public void</td>
+<td>read(File file)</td>
+<td>从指定文件中读取离线的数据</td>
 </tr>
 <tr>
 <td>方法</td>
-<td>public</td>
-<td>void</td>
-<td>setter(XXX)</td>
+<td>public void</td>
+<td>write(File file)</td>
+<td>向指定目录离线数据</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>readCode(StringBuilder)</td>
+<td>读取需要转换为代码的数据</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
 </tr>
 </tbody></table>
+<h3 id="5-CXField"><a href="#5-CXField" class="headerlink" title="5.CXField"></a>5.CXField</h3><p>代表类中存储的一个元素，类似于这样的代码：<code>public Object o</code></p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>CXClass</td>
+<td>type</td>
+<td>表示存储的元素类型</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="6-CXFunction"><a href="#6-CXFunction" class="headerlink" title="6.CXFunction"></a>6.CXFunction</h3><p>代表类中的一个方法：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>CXType</td>
+<td>returnType</td>
+<td>表示返回值的数据类型</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>Set&lt;CXSentence&gt;</td>
+<td>sentences</td>
+<td>存储方法体内的语句</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public boolean</td>
+<td>check(CXClass)</td>
+<td>检查sentences内数据是否合法</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="7-CXInnerClass"><a href="#7-CXInnerClass" class="headerlink" title="7.CXInnerClass"></a>7.CXInnerClass</h3><p>代表内部类，继承自<code>CXClass</code>，其它实现与<code>CXClass</code>相同。</p>
+<h3 id="8-CXSentence"><a href="#8-CXSentence" class="headerlink" title="8.CXSentence"></a>8.CXSentence</h3><p>表示一个语句，如：<code>int i = 0</code>、<code>for (int i = 0; i &lt; 5; ++i)</code></p>
+<p>//具体实现方式未定</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证。 </span>
@@ -355,10 +555,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>代码生成器类结构展示</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">239</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">592</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="空梦">空梦</a></p>
     <p><span class="copy-title">发布时间:</span>2020-04-02, 22:11:32</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-03, 23:06:29</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-04, 16:38:36</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/CodeGenerator/" title="代码生成器类结构展示">http://e0pwme.coding-pages.com/CodeGenerator/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
