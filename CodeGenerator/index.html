@@ -152,7 +152,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="2">
-<input type="hidden" id="yelog_site_word_count" value="2.3k">
+<input type="hidden" id="yelog_site_word_count" value="2.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -261,12 +261,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-04-04 16:41:30'>2020-04-02 22:11</time>
+        创建时间:<time class="date" title='更新时间: 2020-04-06 22:45:11'>2020-04-02 22:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:592</span>
+        <span>字数:872</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -285,7 +285,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码生成器结构如下图："><span class="toc-text">代码生成器结构如下图：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXImport"><span class="toc-text">1.CXImport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-EnumState"><span class="toc-text">2.EnumState</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CXStruct"><span class="toc-text">3.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CXClass"><span class="toc-text">4.CXClass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-CXField"><span class="toc-text">5.CXField</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CXFunction"><span class="toc-text">6.CXFunction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-CXInnerClass"><span class="toc-text">7.CXInnerClass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-CXSentence"><span class="toc-text">8.CXSentence</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码生成器结构如下图："><span class="toc-text">代码生成器结构如下图：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXImport"><span class="toc-text">1.CXImport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-EnumState"><span class="toc-text">2.EnumState</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CXStruct"><span class="toc-text">3.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CXClass"><span class="toc-text">4.CXClass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-CXField"><span class="toc-text">5.CXField</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CXFunction"><span class="toc-text">6.CXFunction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-CXSentence"><span class="toc-text">7.CXSentence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-CXConstructor"><span class="toc-text">8.CXConstructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-CXType"><span class="toc-text">9.CXType</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-StatementType"><span class="toc-text">10.StatementType</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -442,6 +442,12 @@
 <td>存储类中包含的内部类</td>
 </tr>
 <tr>
+<td>元素</td>
+<td>Set&lt;CXConstructors&gt;</td>
+<td>constructors</td>
+<td>存储构造函数</td>
+</tr>
+<tr>
 <td>方法</td>
 <td>public void</td>
 <td>read(File file)</td>
@@ -458,6 +464,12 @@
 <td>public void</td>
 <td>readCode(StringBuilder)</td>
 <td>读取需要转换为代码的数据</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public boolean</td>
+<td>isInnerClass()</td>
+<td>是否是内部类</td>
 </tr>
 <tr>
 <td>方法</td>
@@ -519,6 +531,12 @@
 </tr>
 <tr>
 <td>元素</td>
+<td>CXConstructor</td>
+<td>param</td>
+<td>存储方法的参数列表</td>
+</tr>
+<tr>
+<td>元素</td>
 <td>Set&lt;CXSentence&gt;</td>
 <td>sentences</td>
 <td>存储方法体内的语句</td>
@@ -542,9 +560,138 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="7-CXInnerClass"><a href="#7-CXInnerClass" class="headerlink" title="7.CXInnerClass"></a>7.CXInnerClass</h3><p>代表内部类，继承自<code>CXClass</code>，其它实现与<code>CXClass</code>相同。</p>
-<h3 id="8-CXSentence"><a href="#8-CXSentence" class="headerlink" title="8.CXSentence"></a>8.CXSentence</h3><p>表示一个语句，如：<code>int i = 0</code>、<code>for (int i = 0; i &lt; 5; ++i)</code></p>
+<h3 id="7-CXSentence"><a href="#7-CXSentence" class="headerlink" title="7.CXSentence"></a>7.CXSentence</h3><p>表示一个语句，如：<code>int i = 0</code>、<code>for (int i = 0; i &lt; 5; ++i)</code></p>
 <p>//具体实现方式未定</p>
+<h3 id="8-CXConstructor"><a href="#8-CXConstructor" class="headerlink" title="8.CXConstructor"></a>8.CXConstructor</h3><p>表示一个类的构造函数或者一个方法的所有参数：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>List&lt;CXType&gt;</td>
+<td>types</td>
+<td>存储包含的参数列表</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public boolean</td>
+<td>check(CXType…)</td>
+<td>判断输入的列表是否合法</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="9-CXType"><a href="#9-CXType" class="headerlink" title="9.CXType"></a>9.CXType</h3><p>表示一个数据类型，包括基本类型：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>String</td>
+<td>name</td>
+<td>数据类型的名称，该名称与<code>Class.getName()</code>保持一致</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>Object</td>
+<td>value</td>
+<td>存储该数据的值</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="10-StatementType"><a href="#10-StatementType" class="headerlink" title="10.StatementType"></a>10.StatementType</h3><p>表示一个语句的类型，其中有众多分支：</p>
+<table>
+<thead>
+<tr>
+<th>内部类类名</th>
+<th>介绍</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ddclaration</td>
+<td>一个变量的声明</td>
+<td><code>int k</code></td>
+</tr>
+<tr>
+<td>Assgin</td>
+<td>一个变量的赋值</td>
+<td><code>k = 0</code></td>
+</tr>
+<tr>
+<td>DecAss</td>
+<td>一个变量的声明和赋值</td>
+<td><code>int k = 0</code></td>
+</tr>
+<tr>
+<td>Loop</td>
+<td>循环语句</td>
+<td><code>for (int i = 0; i &lt; 10; ++i) { }</code></td>
+</tr>
+<tr>
+<td>Control</td>
+<td>控制语句</td>
+<td><code>return true</code></td>
+</tr>
+<tr>
+<td>Call</td>
+<td>方法调用</td>
+<td><code>System.out.println(&quot;EmptyDreams&quot;)</code></td>
+</tr>
+<tr>
+<td>Operation</td>
+<td>运算语句</td>
+<td><code>5 + 10</code></td>
+</tr>
+<tr>
+<td>Judge</td>
+<td>判断语句</td>
+<td><code>if (true) { }</code></td>
+</tr>
+<tr>
+<td>Cast</td>
+<td>类型转换</td>
+<td><code>(int) [double]</code></td>
+</tr>
+<tr>
+<td>Superior</td>
+<td>上级引用语句</td>
+<td><code>super(10)</code></td>
+</tr>
+</tbody></table>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证。 </span>
@@ -555,10 +702,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>代码生成器类结构展示</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">592</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">872</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="空梦">空梦</a></p>
     <p><span class="copy-title">发布时间:</span>2020-04-02, 22:11:32</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-04, 16:41:30</p>
+    <p><span class="copy-title">最后更新:</span>2020-04-06, 22:45:11</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/CodeGenerator/" title="代码生成器类结构展示">http://www.emptydreams.xyz/CodeGenerator/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
