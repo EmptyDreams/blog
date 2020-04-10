@@ -102,13 +102,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    7.3k
+                    6.7k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    7 mins.
+                    6 mins.
                 </span>
                 
                 
@@ -325,7 +325,7 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="5-CXField"><a href="#5-CXField" class="headerlink" title="5.CXField"></a>5.CXField</h3><p>代表类中存储的一个元素，类似于这样的代码：<code>public Object o</code></p>
+<h3 id="5-CXType"><a href="#5-CXType" class="headerlink" title="5.CXType"></a>5.CXType</h3><p>表示一个数据类型，包括基本类型：</p>
 <table>
 <thead>
 <tr>
@@ -337,9 +337,15 @@
 </thead>
 <tbody><tr>
 <td>元素</td>
-<td>CXClass</td>
-<td>type</td>
-<td>表示存储的元素类型</td>
+<td>String</td>
+<td>name</td>
+<td>数据类型的名称，该名称与<code>Class.getName()</code>保持一致</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>Object</td>
+<td>value</td>
+<td>存储该数据的值</td>
 </tr>
 <tr>
 <td>方法</td>
@@ -378,7 +384,7 @@
 </tr>
 <tr>
 <td>元素</td>
-<td>Set&lt;CXSentence&gt;</td>
+<td>Set&lt;StatementType&gt;</td>
 <td>sentences</td>
 <td>存储方法体内的语句</td>
 </tr>
@@ -401,9 +407,7 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="7-CXSentence"><a href="#7-CXSentence" class="headerlink" title="7.CXSentence"></a>7.CXSentence</h3><p>表示一个语句，如：<code>int i = 0</code>、<code>for (int i = 0; i &lt; 5; ++i)</code></p>
-<p>//具体实现方式未定</p>
-<h3 id="8-CXConstructor"><a href="#8-CXConstructor" class="headerlink" title="8.CXConstructor"></a>8.CXConstructor</h3><p>表示一个类的构造函数或者一个方法的所有参数：</p>
+<h3 id="7-CXConstructor"><a href="#7-CXConstructor" class="headerlink" title="7.CXConstructor"></a>7.CXConstructor</h3><p>表示一个类的构造函数或者一个方法的所有参数：</p>
 <table>
 <thead>
 <tr>
@@ -438,42 +442,7 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="9-CXType"><a href="#9-CXType" class="headerlink" title="9.CXType"></a>9.CXType</h3><p>表示一个数据类型，包括基本类型：</p>
-<table>
-<thead>
-<tr>
-<th>种类</th>
-<th>类型</th>
-<th>名称</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>元素</td>
-<td>String</td>
-<td>name</td>
-<td>数据类型的名称，该名称与<code>Class.getName()</code>保持一致</td>
-</tr>
-<tr>
-<td>元素</td>
-<td>Object</td>
-<td>value</td>
-<td>存储该数据的值</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>public XXX</td>
-<td>getter()</td>
-<td></td>
-</tr>
-<tr>
-<td>方法</td>
-<td>public void</td>
-<td>setter()</td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="10-StatementType"><a href="#10-StatementType" class="headerlink" title="10.StatementType"></a>10.StatementType</h3><p>表示一个语句的类型，其中有众多分支：</p>
+<h3 id="8-StatementType"><a href="#8-StatementType" class="headerlink" title="8.StatementType"></a>8.StatementType</h3><p>表示一个语句的类型，其中有众多分支：</p>
 <table>
 <thead>
 <tr>
@@ -552,8 +521,8 @@
             
     <div id='gitalk-container' class="comment link"
         data-ae='true'
-        data-ci='ec894e2b66f752e8b7fb'
-        data-cs='3ccc2e92bb350688fe2c2dc2930189b62622bfb1'
+        data-ci='0466ba610813da53b1c2'
+        data-cs='2b6a08624cd52a466a568b0e6c8a4f5a7e97a595'
         data-r='blog-comments'
         data-o='TriDiamond'
         data-a='TriDiamond'
@@ -591,7 +560,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码生成器结构如下图："><span class="toc-number">1.</span> <span class="toc-text">代码生成器结构如下图：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXImport"><span class="toc-number">1.1.</span> <span class="toc-text">1.CXImport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-EnumState"><span class="toc-number">1.2.</span> <span class="toc-text">2.EnumState</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CXStruct"><span class="toc-number">1.3.</span> <span class="toc-text">3.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CXClass"><span class="toc-number">1.4.</span> <span class="toc-text">4.CXClass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-CXField"><span class="toc-number">1.5.</span> <span class="toc-text">5.CXField</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CXFunction"><span class="toc-number">1.6.</span> <span class="toc-text">6.CXFunction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-CXSentence"><span class="toc-number">1.7.</span> <span class="toc-text">7.CXSentence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-CXConstructor"><span class="toc-number">1.8.</span> <span class="toc-text">8.CXConstructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-CXType"><span class="toc-number">1.9.</span> <span class="toc-text">9.CXType</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-StatementType"><span class="toc-number">1.10.</span> <span class="toc-text">10.StatementType</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码生成器结构如下图："><span class="toc-number">1.</span> <span class="toc-text">代码生成器结构如下图：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXImport"><span class="toc-number">1.1.</span> <span class="toc-text">1.CXImport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-EnumState"><span class="toc-number">1.2.</span> <span class="toc-text">2.EnumState</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CXStruct"><span class="toc-number">1.3.</span> <span class="toc-text">3.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CXClass"><span class="toc-number">1.4.</span> <span class="toc-text">4.CXClass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-CXType"><span class="toc-number">1.5.</span> <span class="toc-text">5.CXType</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CXFunction"><span class="toc-number">1.6.</span> <span class="toc-text">6.CXFunction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-CXConstructor"><span class="toc-number">1.7.</span> <span class="toc-text">7.CXConstructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-StatementType"><span class="toc-number">1.8.</span> <span class="toc-text">8.StatementType</span></a></li></ol></li></ol>
                 </div>
             </div>
             
