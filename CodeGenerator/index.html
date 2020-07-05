@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>代码生成器类结构展示 - 空梦</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="有编程的烦恼？来这里说不定可以找到答案~,代码生成器结构如下图：
+
+1.CXImport​        表示一个完整类名，用来表示需要导入的包：java.lang.Object
+2.EnumState表示一个元素的状态，当状态冲突时抛出运,"> 
+    <meta name="author" content="空梦"> 
+    <link rel="alternative" href="atom.xml" title="空梦" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">空梦</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://www.emptydreams.xyz">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">代码生成器类结构展示</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/晨曦"><b>「
+                    </b>晨曦<b> 」</b></a>
+                
+                四月 02, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/CodeGenerator/" title="代码生成器类结构展示" class="">代码生成器类结构展示</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    6.7k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    6 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JAVA/" rel="tag">JAVA</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%B1%BB/" rel="tag">类</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="代码生成器结构如下图："><a href="#代码生成器结构如下图：" class="headerlink" title="代码生成器结构如下图："></a>代码生成器结构如下图：</h2><p><img src="http://i1.fuimg.com/714951/9e01c4a7952001d3.png" alt=""></p>
+<hr>
+<h3 id="1-CXImport"><a href="#1-CXImport" class="headerlink" title="1.CXImport"></a>1.CXImport</h3><p>​        表示一个完整类名，用来表示需要导入的包：<code>java.lang.Object</code></p>
+<h3 id="2-EnumState"><a href="#2-EnumState" class="headerlink" title="2.EnumState"></a>2.EnumState</h3><p>表示一个元素的状态，当状态冲突时抛出运行期异常：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CLASS</td>
+<td>表示这是一个类</td>
+</tr>
+<tr>
+<td>INTERFACE</td>
+<td>表示这是一个接口</td>
+</tr>
+<tr>
+<td>ENUM</td>
+<td>表示这是一个枚举类</td>
+</tr>
+<tr>
+<td>FINAL</td>
+<td>表示该元素被final修饰</td>
+</tr>
+<tr>
+<td>ABSTRACT</td>
+<td>表示该元素被abstract修饰</td>
+</tr>
+<tr>
+<td>PUBLIC</td>
+<td>表示该元素被public修饰</td>
+</tr>
+<tr>
+<td>PRIVATE</td>
+<td>表示该元素被private修饰</td>
+</tr>
+<tr>
+<td>PROTECTED</td>
+<td>表示该元素被protected修饰</td>
+</tr>
+</tbody></table>
+<h3 id="3-CXStruct"><a href="#3-CXStruct" class="headerlink" title="3.CXStruct"></a>3.CXStruct</h3><p>所有数据类的父类，被<code>abstract</code>修饰，其中可能包含的方法及元素如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">种类</th>
+<th align="left">类型</th>
+<th align="left">名称</th>
+<th align="left">介绍</th>
+<th align="center">是否为<code>abstract</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">元素</td>
+<td align="left">String</td>
+<td align="left">name</td>
+<td align="left">存储标识符</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">元素</td>
+<td align="left">Set&lt;EnumState&gt;</td>
+<td align="left">states</td>
+<td align="left">存储状态量</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">元素</td>
+<td align="left">Set&lt;CXImport&gt;</td>
+<td align="left">imports</td>
+<td align="left">存储需要导入的包</td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public String</td>
+<td align="left">toString()</td>
+<td align="left">获得字符串</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public int</td>
+<td align="left">hashCode()</td>
+<td align="left">获取hashCode()</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public boolean</td>
+<td align="left">equals(Object)</td>
+<td align="left">判断对象是否相等</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public XXX</td>
+<td align="left">getter()</td>
+<td align="left"></td>
+<td align="center">否</td>
+</tr>
+<tr>
+<td align="center">方法</td>
+<td align="left">public void</td>
+<td align="left">setter(XXX)</td>
+<td align="left"></td>
+<td align="center">否</td>
+</tr>
+</tbody></table>
+<h3 id="4-CXClass"><a href="#4-CXClass" class="headerlink" title="4.CXClass"></a>4.CXClass</h3><p>代表需要生成一个类，继承自<code>CXStruct</code>，其中可能包含的方法及元素如下：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>Set&lt;CXField&gt;</td>
+<td>fields</td>
+<td>存储类中包含的变量</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>Set&lt;CXFunction&gt;</td>
+<td>futcions</td>
+<td>存储类中包含的函数</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>Set&lt;CXInnerClass&gt;</td>
+<td>innerClass</td>
+<td>存储类中包含的内部类</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>Set&lt;CXConstructors&gt;</td>
+<td>constructors</td>
+<td>存储构造函数</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>read(File file)</td>
+<td>从指定文件中读取离线的数据</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>write(File file)</td>
+<td>向指定目录离线数据</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>readCode(StringBuilder)</td>
+<td>读取需要转换为代码的数据</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public boolean</td>
+<td>isInnerClass()</td>
+<td>是否是内部类</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="5-CXType"><a href="#5-CXType" class="headerlink" title="5.CXType"></a>5.CXType</h3><p>表示一个数据类型，包括基本类型：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>String</td>
+<td>name</td>
+<td>数据类型的名称，该名称与<code>Class.getName()</code>保持一致</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>Object</td>
+<td>value</td>
+<td>存储该数据的值</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="6-CXFunction"><a href="#6-CXFunction" class="headerlink" title="6.CXFunction"></a>6.CXFunction</h3><p>代表类中的一个方法：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>CXType</td>
+<td>returnType</td>
+<td>表示返回值的数据类型</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>CXConstructor</td>
+<td>param</td>
+<td>存储方法的参数列表</td>
+</tr>
+<tr>
+<td>元素</td>
+<td>Set&lt;StatementType&gt;</td>
+<td>sentences</td>
+<td>存储方法体内的语句</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public boolean</td>
+<td>check(CXClass)</td>
+<td>检查sentences内数据是否合法</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="7-CXConstructor"><a href="#7-CXConstructor" class="headerlink" title="7.CXConstructor"></a>7.CXConstructor</h3><p>表示一个类的构造函数或者一个方法的所有参数：</p>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>类型</th>
+<th>名称</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素</td>
+<td>List&lt;CXType&gt;</td>
+<td>types</td>
+<td>存储包含的参数列表</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public boolean</td>
+<td>check(CXType…)</td>
+<td>判断输入的列表是否合法</td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public XXX</td>
+<td>getter()</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>public void</td>
+<td>setter()</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="8-StatementType"><a href="#8-StatementType" class="headerlink" title="8.StatementType"></a>8.StatementType</h3><p>表示一个语句的类型，其中有众多分支：</p>
+<table>
+<thead>
+<tr>
+<th>内部类类名</th>
+<th>介绍</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ddclaration</td>
+<td>一个变量的声明</td>
+<td><code>int k</code></td>
+</tr>
+<tr>
+<td>Assgin</td>
+<td>一个变量的赋值</td>
+<td><code>k = 0</code></td>
+</tr>
+<tr>
+<td>DecAss</td>
+<td>一个变量的声明和赋值</td>
+<td><code>int k = 0</code></td>
+</tr>
+<tr>
+<td>Loop</td>
+<td>循环语句</td>
+<td><code>for (int i = 0; i &lt; 10; ++i) { }</code></td>
+</tr>
+<tr>
+<td>Control</td>
+<td>控制语句</td>
+<td><code>return true</code></td>
+</tr>
+<tr>
+<td>Call</td>
+<td>方法调用</td>
+<td><code>System.out.println(&quot;EmptyDreams&quot;)</code></td>
+</tr>
+<tr>
+<td>Operation</td>
+<td>运算语句</td>
+<td><code>5 + 10</code></td>
+</tr>
+<tr>
+<td>Judge</td>
+<td>判断语句</td>
+<td><code>if (true) { }</code></td>
+</tr>
+<tr>
+<td>Cast</td>
+<td>类型转换</td>
+<td><code>(int) [double]</code></td>
+</tr>
+<tr>
+<td>Superior</td>
+<td>上级引用语句</td>
+<td><code>super(10)</code></td>
+</tr>
+</tbody></table>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='0466ba610813da53b1c2'
+        data-cs='2b6a08624cd52a466a568b0e6c8a4f5a7e97a595'
+        data-r='blogTalk'
+        data-o='EmptyDreams'
+        data-a='EmptyDreams'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>空梦</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/EmptyDreams" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">2 <p>文章</p></a></li>
+                    <li><a href="/categories">2 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码生成器结构如下图："><span class="toc-number">1.</span> <span class="toc-text">代码生成器结构如下图：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CXImport"><span class="toc-number">1.1.</span> <span class="toc-text">1.CXImport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-EnumState"><span class="toc-number">1.2.</span> <span class="toc-text">2.EnumState</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CXStruct"><span class="toc-number">1.3.</span> <span class="toc-text">3.CXStruct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CXClass"><span class="toc-number">1.4.</span> <span class="toc-text">4.CXClass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-CXType"><span class="toc-number">1.5.</span> <span class="toc-text">5.CXType</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-CXFunction"><span class="toc-number">1.6.</span> <span class="toc-text">6.CXFunction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-CXConstructor"><span class="toc-number">1.7.</span> <span class="toc-text">7.CXConstructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-StatementType"><span class="toc-number">1.8.</span> <span class="toc-text">8.StatementType</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            空梦
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+
+    
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+
+    
+<script src="/js/busuanzi.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
