@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (master by default)
+
+# These lines should *not* be indented
+media_folder: "source/images" # Media files will be stored in the repo under source/images
+public_folder: "images" # The src attribute for uploaded media will begin with images
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+collections:
+  - name: "Post" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "source/_posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "标题TITLE", name: "title", widget: "string"}
+      - {label: "发布日期PUBLISH DATE", name: "date", widget: "datetime"}
+      - {label: "更新日期UPDATED DATE", name: "updated", widget: "datetime"}
+#      - {label: "缩写"ABBRLINK, name: "abbrlink", widget: "string"}
+      - {label: "标签TAGS", name: "tags", widget: "list"}
+      - {label: "分类目录CATEGORIES", name: "categories", widget: "list"}
+      - {label: "目录TOC", name: "toc", widget: "boolean", default: true}
+      - {label: "正文BODY", name: "body", widget: "markdown"}    
+#      - {label: "特色图片FEATURED IMAGE", name: "thumbnail", widget: "string"}
