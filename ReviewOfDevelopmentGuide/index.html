@@ -253,7 +253,7 @@ if (result.entityHit == null)
     this.setDead();
     return;
 }</code></pre>
-<p>&emsp;&emsp;这样子后面的代码就不需要缩进了，并且阅读代码的人看到前面的代码就能非常清楚的知道：这段代码在这两种情况下是不需要执行后面的逻辑的，按照原本的写法，读者还需要继续往下看，知道找到其对应的<code>}</code>然后发现原来这个情况是没有任何代码需要执行的。实际上在开发中，也建议使用后面的写法，会使代码更加的清晰易懂。</p>
+<p>&emsp;&emsp;这样子后面的代码就不需要缩进了，并且阅读代码的人看到前面的代码就能非常清楚的知道：这段代码在这两种情况下是不需要执行后面的逻辑的，按照原本的写法，读者还需要继续往下看，直到找到其对应的<code>}</code>然后发现原来这个情况是没有任何代码需要执行的。实际上在开发中，也建议使用后面的写法，会使代码更加的清晰易懂。</p>
 <p>&emsp;&emsp;但是很明显，就算消除了缩进，中间最长的代码依然超出了打印的最大宽度，那么如何解决？很简单，仔细阅读就会发现代码中一个静态常量使用了两次，那么为了缩短打印出来的代码，我们可以使用<code>import static</code>或者直接干脆告诉读者因为印刷原因xxx简写成xxx来完成。同时我们也可以省去<code>this</code>，或者使用“伪代码”来节省版面。</p>
 <p>&emsp;&emsp;经过简单的修改，代码就变成了下面这样，是不是好看了很多：</p>
 <pre><code class="java">//import static PotionRegistryHandler.POTION_DIRT_PROTECTION
@@ -291,7 +291,8 @@ mc.ingameGUI.drawTexturedModalRect(x, height - 35, orange &lt; 4 ? 0 : 9, 0, 9, 
 mc.ingameGUI.drawTexturedModalRect(x, height - 24, green &lt; 4 ? 0 : 9, 0, 9, 9);
 ......</code></pre>
 <p>&emsp;&emsp;这里我们假设一个情况，就是已经缩短到最简，无法进行任何缩减了该怎么办？比如P242的代码：</p>
-<pre><code class="java">private static final FMLEventChannel CHANNEL = NetworkRegistry.INSTANCE.newEventDrivenChannel(NAME);</code></pre>
+<pre><code class="java">    private static final FMLEventChannel CHANNEL = NetworkRegistry.INSTANCE.
+newEventDrivenChannel(NAME);</code></pre>
 <p>&emsp;&emsp;虽然可以使用<code>import static</code>进行缩短，但是这里我们换一种方法，就是拆分，把一行代码写成多行：</p>
 <pre><code class="java">private static final FMLEventChannel CHANNEL =
                 NetworkRegistry.INSTANCE.newEventDrivenChannel(NAME);</code></pre>
