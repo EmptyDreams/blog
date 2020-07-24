@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>《我的世界：Minecraft模组开发指南》读后感 - 空梦</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="有编程的烦恼？来这里说不定可以找到答案~,&amp;emsp;&amp;emsp;拿到书后迫不及待的大概的把书翻看了一遍，总体来说不太满意，感觉内容中难度上卡到了入门和熟练之间，读起来比较捉急，即没有真的把入门的东西讲全，也没有提到高级的东西。
+&amp;emsp,"> 
+    <meta name="author" content="空梦"> 
+    <link rel="alternative" href="atom.xml" title="空梦" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">空梦</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://blog.emptydreams.xyz">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">《我的世界：Minecraft模组开发指南》读后感</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/Java"><b>「
+                    </b>JAVA<b> 」</b></a>
+                
+                七月 23, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/ReviewOfDevelopmentGuide/" title="《我的世界：Minecraft模组开发指南》读后感" class="">《我的世界：Minecraft模组开发指南》读后感</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    13k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    12 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/MC/" rel="tag">MC</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <p>&emsp;&emsp;拿到书后迫不及待的大概的把书翻看了一遍，总体来说不太满意，感觉内容中难度上卡到了入门和熟练之间，读起来比较捉急，即没有真的把入门的东西讲全，也没有提到高级的东西。</p>
+<p>&emsp;&emsp;按照个人的建议，这本书并不适合Java和Forge的深度学习，学习Forge推荐阅读4z的<a href="https://fmltutor.ustc-zzzz.net/" target="_blank" rel="noopener">Minecraft 1.8.9 FML Mod 开发教程</a>以及<a href="[https://harbinger.covertdragon.tea](https://harbinger.covertdragon.team/)">先驱者教程</a>，其中4z的教程版本较老但是较为完善，先驱者是1.12.2版本但是内容不完善同时对新手不太友好，所以可以两个搭配食用。学习Java的话在文章尾部笔者罗列了一些书籍，读者可以选择性的阅读。</p>
+<p>&emsp;&emsp;同时按照我个人的看法，开始写模组之前一定要熟练掌握Java编程，不然开发过程中会遇到很多问题。</p>
+<p>&emsp;&emsp;同时阅读的时候也发现了一些我个人认为有待改进、不严谨和错误的地方，这里简单罗列一下：</p>
+<h3 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h3><p>&emsp;&emsp;书中简要提及了代码风格的问题，但是说明的不够详细，详细介绍可以<a href="https://www.jianshu.com/p/e7d500f36da4" target="_blank" rel="noopener">看这里</a>，如果看完仍然不清楚的话可以自行百度查阅更多资料。</p>
+<h3 id="启动-调试模组的方式（P19）"><a href="#启动-调试模组的方式（P19）" class="headerlink" title="启动/调试模组的方式（P19）"></a>启动/调试模组的方式（P19）</h3><p>&emsp;&emsp;书中给出的方式是<code>gradlew.bat runClient</code>和<code>gradlew.bat runServer</code>，实际上如果使用<code>gradlew.bat genIntelliRuns</code>配置的运行方式应该是下图中的样子(其中的虚拟机选项、程序参数、使用模块的类路径与JRE默认不是这样子，服务端与这个类似)：<img src="/.xyz//run.png" alt="客户端运行配置"></p>
+<h3 id="注册名称（P57…）"><a href="#注册名称（P57…）" class="headerlink" title="注册名称（P57…）"></a>注册名称（P57…）</h3><p>&emsp;&emsp;书中一直在使用<code>setRegistryName(String name)</code>方法设置名称，但是实际上推荐的设置方法是<code>setRegistryName(String modid, String name)</code>和<code>setRegistryName(ResourceLocation name)</code>。</p>
+<p>&emsp;&emsp;同时使用<code>ResourceLocation</code>时也推荐使用<code>new ResourceLocation(String resourceDomainIn, String resourcePathIn)</code>这个构造函数而不是<code>new ResourceLocation(resourceName)</code>，其中对于方块来讲，<code>resourceDomainIn</code>对应modid，<code>resourcePathIn</code>对应方块name。</p>
+<h3 id="垃圾回收机制（P58—倒数第三行）"><a href="#垃圾回收机制（P58—倒数第三行）" class="headerlink" title="垃圾回收机制（P58—倒数第三行）"></a>垃圾回收机制（P58—倒数第三行）</h3><blockquote>
+<p>每过一段时间就会检查JVM中部分对象或所有对象</p>
+</blockquote>
+<p>&emsp;&emsp;这句话实际上不严谨，GC（垃圾回收器）不会按照固定的时间进行回收，只会在满足特定条件时进行回收，至于检查所有对象还是部分对象，不同的垃圾回收器以及不同的收集方式会有所区别，这里不进行深究，读者感兴趣可以去查阅<a href="https://book.douban.com/subject/6522893/" target="_blank" rel="noopener">《深入理解Java虚拟机：JVM高级特性与最佳实践》</a>中的相关章节，书中详细说明了GC的相关算法与实现。</p>
+<h3 id="SideOnly注解（P62—代码下方）"><a href="#SideOnly注解（P62—代码下方）" class="headerlink" title="SideOnly注解（P62—代码下方）"></a>SideOnly注解（P62—代码下方）</h3><blockquote>
+<p>@SideOnly的作用是表明这个方法只作用于客户端</p>
+</blockquote>
+<p>&emsp;&emsp;实际上应该是<code>@SideOnly(CLIENT)</code>表明被修饰的元素只作用于客户端（@SideOnly可以修饰类、方法和字段），同时<code>@SideOnly(SERVER)</code>在普通开发中一般见不到，因为一旦使用了这个注解，那么模组将无法在本地游戏中使用被注解的元素。</p>
+<h3 id="材质大小（P63—最后一行）"><a href="#材质大小（P63—最后一行）" class="headerlink" title="材质大小（P63—最后一行）"></a>材质大小（P63—最后一行）</h3><blockquote>
+<p>PNG文件本身大小应该是16像素x16像素，不过32像素x32像素的PNG图片也是可行的</p>
+</blockquote>
+<p>&emsp;&emsp;做过材质的读者应该知道，MC中的材质大小只需要是2的整次幂就可以了（2，4，8，16……）。</p>
+<h3 id="未说明的代码"><a href="#未说明的代码" class="headerlink" title="未说明的代码"></a>未说明的代码</h3><p>&emsp;&emsp;书中有多处给出了代码却没有说明用途的地方，如<code>Block</code>的构造函数、<code>GuiContainer#renderHoveredToolTip(int, int)</code>等。</p>
+<h3 id="书写错误"><a href="#书写错误" class="headerlink" title="书写错误"></a>书写错误</h3><blockquote>
+<p>1.这是我们第一次编写拥有返回值的方法，也就是返回值声明为void。</p>
+<p>​                                                                            —— P71 · 第一行</p>
+<p>2.IntelliJ IDEA 提出了两个方案——实现对应方法，并把这个类同样变成抽象类。</p>
+<p>​                                                                            —— P83 · 第四行</p>
+<p>3.返回值是EnumActionResult.PASS的情况都将被视为成功执行，并忽略副手上的物品。</p>
+<p>​                                                                            —— P226 · 第七行</p>
+</blockquote>
+<p>1). 应该为：这是我们第一次编写拥有返回值的方法，也就是返回值声明为<code>非void</code>。| 书中写成了”void”。</p>
+<p>2). 应该为：IntelliJ IDEA 提出了两个方案——实现对应方法，<code>或</code>把这个类同样变成抽象类。| 书中将“或”写为了“并”。</p>
+<p>3). 应该为：返回值是<code>EnumActionResult.SUCCESS</code>的情况都将被视为成功执行，并忽略副手上的物品。 | 书中将“SUCCESS”写成了“PASS”。</p>
+<h3 id="ItemStack类（P85—倒数第三行）"><a href="#ItemStack类（P85—倒数第三行）" class="headerlink" title="ItemStack类（P85—倒数第三行）"></a>ItemStack类（P85—倒数第三行）</h3><blockquote>
+<p>这个数量在大部分情况下可以是1到64之间的任意值，当然，对于调用了setMaxStackSize方法，也就是设置了最大堆叠的物品，最大数字可能小于64。</p>
+</blockquote>
+<p>&emsp;&emsp;这里只是补充一下，就算设置的最大值，也可以突破这个数值，极端一点的说，就算你设置了最大数值为”1”，也可以通过<code>setCount(int)</code>、<code>grow(int)</code>等方法使堆叠数量超过这个数值，不过开发中建议不要超过最大数量。</p>
+<h3 id="缺失的注解（P89—第一段代码）"><a href="#缺失的注解（P89—第一段代码）" class="headerlink" title="缺失的注解（P89—第一段代码）"></a>缺失的注解（P89—第一段代码）</h3><p>&emsp;&emsp;文中明确说明“为覆盖用的方法也加上这一注解”，但是在下方代码中并没有出现<code>@sideOnly</code>注解，同时这句话我感觉应该是多写了一个“用”字。</p>
+<h3 id="被忽视的工具（P90）"><a href="#被忽视的工具（P90）" class="headerlink" title="被忽视的工具（P90）"></a>被忽视的工具（P90）</h3><p>&emsp;&emsp;文中提到了挖掘速度，指出速度等级为：木 &lt; 石 &lt; 铁 &lt; 钻石，但是其中漏掉了“金”，加上金的排序如下：木 &lt; 石 &lt; 铁 &lt; 钻石 &lt; 金。</p>
+<h3 id="更为方便的数组声明方式（P101—最后一行）"><a href="#更为方便的数组声明方式（P101—最后一行）" class="headerlink" title="更为方便的数组声明方式（P101—最后一行）"></a>更为方便的数组声明方式（P101—最后一行）</h3><p>&emsp;&emsp;书中使用<code>int[] intArray = new int[] {1, 2, 3, 4}</code>创建了数组，其实也可以简写为<code>int[] intArray = {1, 2, 3, 4}</code>。</p>
+<h3 id="冗余的对象比较方式（P120—最后一段代码）"><a href="#冗余的对象比较方式（P120—最后一段代码）" class="headerlink" title="冗余的对象比较方式（P120—最后一段代码）"></a>冗余的对象比较方式（P120—最后一段代码）</h3><p>&emsp;&emsp;虽然这么写比较没有问题，但是可以简写为：</p>
+<pre><code class="java">Blocks.DIRT.getRegistryName().equals(registryName)</code></pre>
+<p>&emsp;&emsp;或者使用更直白的方式：</p>
+<pre><code class="java">Item.getItemFromBlock(Blocks.DIRT) == event.getItemStack().getItem()</code></pre>
+<h3 id="未说明的hashCode-方法（P121）"><a href="#未说明的hashCode-方法（P121）" class="headerlink" title="未说明的hashCode()方法（P121）"></a>未说明的<code>hashCode()</code>方法（P121）</h3><p>&emsp;&emsp;书中简单叙述了<code>equals(Object)</code>方法，但是却漏掉了<code>hashCode()</code>方法。在开发过程中，如果一个类重写了<code>equals(Object)</code>方法，那么它就应当也重写<code>hashCode()</code>方法，如果只重写其中一个，那么这个类将无法更好的与集合类合作。因为集合类为了优化性能，在比较对象时会优先比较hashCode，如果hashCode不同那么这两个对象一定不相等，如果相同再调用<code>equals(Object)</code>确保对象一致。</p>
+<p>&emsp;&emsp;关于<code>hashCode()</code>方法这里就不详细说明了，读者可以查阅相关文章<a href="https://www.cnblogs.com/zhchoutai/p/8676351.html" target="_blank" rel="noopener">(CSND)</a>。</p>
+<h3 id="生成器模式（P167）"><a href="#生成器模式（P167）" class="headerlink" title="生成器模式（P167）"></a>生成器模式（P167）</h3><p>&emsp;&emsp;书中简要叙述了“生成器模式”，不过没有提到其它模式让人感觉有些可惜，读者<a href="http://c.biancheng.net/design_pattern/" target="_blank" rel="noopener">可以到这里</a>查阅相关内容，网页中不是所有模式都需要阅读，阅读：单例模式、工厂模式、建造者模式（即生成器模式）、代理模式、观察者模式、访问者模式即可。</p>
+<p>&emsp;&emsp;不过小伙伴Java语言基础不怎么好的话可以先不看，留着以后阅读就好。</p>
+<h3 id="漏写的代码（P168）"><a href="#漏写的代码（P168）" class="headerlink" title="漏写的代码（P168）"></a>漏写的代码（P168）</h3><p>&emsp;&emsp;书中写了<code>FooBuilder.create()</code>这样子的代码，但是每行都忘记在末尾加上<code>.build()</code>了。</p>
+<h3 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h3><p>&emsp;&emsp;关于装箱与拆箱这里做一个补充：在能使用基本类型的时候不要使用包装类型，因为使用包装类型很可能会带来“许多”不必要的装箱与拆箱，会较为严重的影响程序性能。</p>
+<h3 id="识别NBT类型（P216）"><a href="#识别NBT类型（P216）" class="headerlink" title="识别NBT类型（P216）"></a>识别NBT类型（P216）</h3><blockquote>
+<p>nbt instanceof NBTTagByte：检查nbt是否是byte类型的数据</p>
+</blockquote>
+<p>&emsp;&emsp;同样这里只做一个简单的补充：NBT中<code>boolean</code>类型同样是以<code>NBTTagByte</code>的形式存储的。</p>
+<h3 id="过于简单的提及meta（P256）"><a href="#过于简单的提及meta（P256）" class="headerlink" title="过于简单的提及meta（P256）"></a>过于简单的提及meta（P256）</h3><p>&emsp;&emsp;关于meta书中只说明了只能使用4位，却没有提及二进制运算，实在令人感到可惜，读者可以阅读这篇文章了解<a href="https://www.cnblogs.com/shuaiding/p/11124974.html" target="_blank" rel="noopener">二进制（位）运算</a>。</p>
+<p>&emsp;&emsp;同时书中给的代码其实是无法正常运行的，在游戏启动时会造成崩溃，应该写为如下形式：</p>
+<pre><code class="java">EnumFacing facing = EnumFacing.getHorizontal(meta);
+if (facing.getAxis() == EnumFacing.Axis.Y) {
+    facing = EnumFacing.NORTH;
+}
+return getDefaultState().widthProperty(FACING, facing);</code></pre>
+<h3 id="混淆for与for-each（P272）"><a href="#混淆for与for-each（P272）" class="headerlink" title="混淆for与for-each（P272）"></a>混淆for与for-each（P272）</h3><blockquote>
+<p>以for开头的语句被称为for-each循环语句。</p>
+</blockquote>
+<p>&emsp;&emsp;实际上，只有如下形式的循环成为<code>for-each循环</code>，其他都成为<code>for循环</code></p>
+<pre><code class="java">//&quot;var&quot;指数据类型，&quot;array&quot;指支持for-each循环的类型
+for (var i : array) {
+    //do something......
+}</code></pre>
+<p>&emsp;&emsp;另外提一点，并非只有数组支持for-each循环，所有实现了<code>Collection&lt;E&gt;</code>接口的类都可以支持for-each循环。</p>
+<h3 id="误用for-each循环（P272）"><a href="#误用for-each循环（P272）" class="headerlink" title="误用for-each循环（P272）"></a>误用for-each循环（P272）</h3><p>&emsp;&emsp;文中写了下面这样的代码：</p>
+<pre><code class="java">int[] range = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8};
+for (int i : range) {
+    //do something......
+}</code></pre>
+<p>&emsp;&emsp;但是for-each循环的目的不是为了循环指定次数，而是用于遍历，循环指定次数应当使用如下代码：</p>
+<pre><code class="java">for (int i = 0; i &lt; 8; ++i) {
+    //do something......
+}</code></pre>
+<h3 id="排版问题"><a href="#排版问题" class="headerlink" title="排版问题"></a>排版问题</h3><p>&emsp;&emsp;书中代码的排版问题还是很明显的，这里罗列一个（P226）：</p>
+<pre><code class="java">@Override
+protected void onImact(RayTraceResult result)
+{
+    if (!this.world.isRemote)
+    {
+        if (result.entityHit != null)
+        {
+            float amount = 6.0F;
+            DamageSource source = DamageSource.causeThrownDamage(this, this
+.getThrower());
+            if (result.entityHit instanceof EntityLivingBase)
+            {
+                EntityLivingBase target = ((EntityLivingBase) result.entityHit);
+                if (target.isPotionActive(PotionRegistryHandler.POTION_DIRT_
+PROTECTION))
+                {
+                    PotionEffect effect = target.getActivePotionEffect(PotionRegi
+stryHandler.POTION_DIRT_PROTECTION);
+                    amount = effect.getAmplifier() &gt; 0 ? 0 : amount / 2;
+                }
+            }
+            result.entityHit.attackEntityFrom(source, amount);
+        }
+        this.setDead();
+    }
+}</code></pre>
+<p>&emsp;&emsp;这段代码看起来无疑是非常混乱的，那么有没有办法让代码打印出来依然美观呢？答案是有的，有两种方法，第一种简单粗暴，直接贴张截图就可以了；另一种则是修改代码的样式。</p>
+<p>&emsp;&emsp;比如说这段代码，我们可以看到缩进浪费了很多空间，那么我们可以把前两个<code>if</code>改成下面这种形式：</p>
+<pre><code class="java">if (this.world.isRemote) return;
+if (result.entityHit == null)
+{
+    this.setDead();
+    return;
+}</code></pre>
+<p>&emsp;&emsp;这样子后面的代码就不需要缩进了，并且阅读代码的人看到前面的代码就能非常清楚的知道：这段代码在这两种情况下是不需要执行后面的逻辑的，按照原本的写法，读者还需要继续往下看，知道找到其对应的<code>}</code>然后发现原来这个情况是没有任何代码需要执行的。实际上在开发中，也建议使用后面的写法，会使代码更加的清晰易懂。</p>
+<p>&emsp;&emsp;但是很明显，就算消除了缩进，中间最长的代码依然超出了打印的最大宽度，那么如何解决？很简单，仔细阅读就会发现代码中一个静态常量使用了两次，那么为了缩短打印出来的代码，我们可以使用<code>import static</code>或者直接干脆告诉读者因为印刷原因xxx简写成xxx来完成。同时我们也可以省去<code>this</code>，或者使用“伪代码”来节省版面。</p>
+<p>&emsp;&emsp;经过简单的修改，代码就变成了下面这样，是不是好看了很多：</p>
+<pre><code class="java">//import static PotionRegistryHandler.POTION_DIRT_PROTECTION
+@Override
+protected void onImact(RayTraceResult result)
+{
+    if (this.world.isRemote) return;
+    if (result.entityHit == null)
+    {
+        this.setDead();
+        return;
+    }
+
+    float amount = 6.0F;
+    DamageSource source = DamageSource.causeThrownDamage(this, getThrower());
+    if (result.entityHit instanceof EntityLivingBase)
+    {
+        EntityLivingBase target = ((EntityLivingBase) result.entityHit);
+        if (target.isPotionActive(POTION_DIRT_PROTECTION))
+        {
+            PotionEffect effect = target.getActivePotionEffect(POTION_DIRT_PROTECTION);
+            amount = effect.getAmplifier() &gt; 0 ? 0 : amount / 2;
+        }
+    }
+    result.entityHit.attackEntityFrom(source, amount);
+    setDead();
+}</code></pre>
+<p>&emsp;&emsp;我们再举一个栗子，比如说P239的代码：</p>
+<pre><code class="java">mc.ingameGUI.drawTexturedModalRect(width / 2 - 170, height - 35, orange &lt; 4 ? 0 : 9, 0, 9, 9);
+mc.ingameGUI.drawTexturedModalRect(width / 2 - 170, height - 24, green &lt; 4 ? 0 : 9, 0, 9, 9);
+......</code></pre>
+<p>&emsp;&emsp;首先，我们看到代码中有一个重复出现的量，即：<code>width / 2 - 170</code>，那么我们可以把它保存下来，变成下面这样的代码：</p>
+<pre><code class="java">int x = width / 2 - 170;
+mc.ingameGUI.drawTexturedModalRect(x, height - 35, orange &lt; 4 ? 0 : 9, 0, 9, 9);
+mc.ingameGUI.drawTexturedModalRect(x, height - 24, green &lt; 4 ? 0 : 9, 0, 9, 9);
+......</code></pre>
+<p>&emsp;&emsp;这里我们假设一个情况，就是已经缩短到最简，无法进行任何缩减了该怎么办？比如P242的代码：</p>
+<pre><code class="java">private static final FMLEventChannel CHANNEL = NetworkRegistry.INSTANCE.newEventDrivenChannel(NAME);</code></pre>
+<p>&emsp;&emsp;虽然可以使用<code>import static</code>进行缩短，但是这里我们换一种方法，就是拆分，把一行代码写成多行：</p>
+<pre><code class="java">private static final FMLEventChannel CHANNEL =
+                NetworkRegistry.INSTANCE.newEventDrivenChannel(NAME);</code></pre>
+<h3 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h3><p>&emsp;&emsp;这里我罗列出一些我看过的感觉还不错的编程书，大家可以根据自己的需求阅读：</p>
+<table>
+<thead>
+<tr>
+<th align="center">归类</th>
+<th align="right">书籍名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">入门</td>
+<td align="right">Java从入门到精通</td>
+</tr>
+<tr>
+<td align="center">入门</td>
+<td align="right">Java编程思想</td>
+</tr>
+<tr>
+<td align="center">提升</td>
+<td align="right">Effective Java</td>
+</tr>
+<tr>
+<td align="center">提升</td>
+<td align="right">Java数据结构与算法</td>
+</tr>
+<tr>
+<td align="center">提升</td>
+<td align="right">重构：改善既有代码的设计</td>
+</tr>
+<tr>
+<td align="center">提升</td>
+<td align="right">Java8 实战</td>
+</tr>
+<tr>
+<td align="center">拔高</td>
+<td align="right">深入理解Java虚拟机：JVM高级特性与最佳实践</td>
+</tr>
+</tbody></table>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='0466ba610813da53b1c2'
+        data-cs='2b6a08624cd52a466a568b0e6c8a4f5a7e97a595'
+        data-r='blogTalk'
+        data-o='EmptyDreams'
+        data-a='EmptyDreams'
+        data-d=''
+    >留言</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/avatar.png" height=300 width=300></img>
+                    <p>空梦</p>
+                    <span>Think like an artist, develop like an artisan</span>
+                    <dl>
+                        <dd><a href="https://github.com/EmptyDreams" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">2 <p>文章</p></a></li>
+                    <li><a href="/categories">1 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码风格"><span class="toc-number">1.</span> <span class="toc-text">代码风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动-调试模组的方式（P19）"><span class="toc-number">2.</span> <span class="toc-text">启动&#x2F;调试模组的方式（P19）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注册名称（P57…）"><span class="toc-number">3.</span> <span class="toc-text">注册名称（P57…）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾回收机制（P58—倒数第三行）"><span class="toc-number">4.</span> <span class="toc-text">垃圾回收机制（P58—倒数第三行）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SideOnly注解（P62—代码下方）"><span class="toc-number">5.</span> <span class="toc-text">SideOnly注解（P62—代码下方）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#材质大小（P63—最后一行）"><span class="toc-number">6.</span> <span class="toc-text">材质大小（P63—最后一行）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未说明的代码"><span class="toc-number">7.</span> <span class="toc-text">未说明的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#书写错误"><span class="toc-number">8.</span> <span class="toc-text">书写错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ItemStack类（P85—倒数第三行）"><span class="toc-number">9.</span> <span class="toc-text">ItemStack类（P85—倒数第三行）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缺失的注解（P89—第一段代码）"><span class="toc-number">10.</span> <span class="toc-text">缺失的注解（P89—第一段代码）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#被忽视的工具（P90）"><span class="toc-number">11.</span> <span class="toc-text">被忽视的工具（P90）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更为方便的数组声明方式（P101—最后一行）"><span class="toc-number">12.</span> <span class="toc-text">更为方便的数组声明方式（P101—最后一行）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#冗余的对象比较方式（P120—最后一段代码）"><span class="toc-number">13.</span> <span class="toc-text">冗余的对象比较方式（P120—最后一段代码）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未说明的hashCode-方法（P121）"><span class="toc-number">14.</span> <span class="toc-text">未说明的hashCode()方法（P121）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成器模式（P167）"><span class="toc-number">15.</span> <span class="toc-text">生成器模式（P167）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#漏写的代码（P168）"><span class="toc-number">16.</span> <span class="toc-text">漏写的代码（P168）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#装箱与拆箱"><span class="toc-number">17.</span> <span class="toc-text">装箱与拆箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#识别NBT类型（P216）"><span class="toc-number">18.</span> <span class="toc-text">识别NBT类型（P216）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过于简单的提及meta（P256）"><span class="toc-number">19.</span> <span class="toc-text">过于简单的提及meta（P256）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混淆for与for-each（P272）"><span class="toc-number">20.</span> <span class="toc-text">混淆for与for-each（P272）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#误用for-each循环（P272）"><span class="toc-number">21.</span> <span class="toc-text">误用for-each循环（P272）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排版问题"><span class="toc-number">22.</span> <span class="toc-text">排版问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#书籍推荐"><span class="toc-number">23.</span> <span class="toc-text">书籍推荐</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            空梦
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+
+    
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+
+    
+<script src="/js/busuanzi.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="//www.googletagmanager.com/gtag/js?id=UA-149874671-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149874671-1');
+    </script>
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think like an artist, develop like an artisan", "艺术家思维去思考问题，工匠创造精神去开发"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

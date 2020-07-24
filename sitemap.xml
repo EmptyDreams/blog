@@ -2,37 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.emptydreams.xyz/about/index.html</loc>
+    <loc>http://blog.emptydreams.xyz/LocalInnerClass/</loc>
+    
+    <lastmod>2020-07-23T14:52:32.463Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.emptydreams.xyz/ReviewOfDevelopmentGuide/</loc>
+    
+    <lastmod>2020-07-23T14:52:10.417Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.emptydreams.xyz/admin/config.json</loc>
+    
+    <lastmod>2020-07-15T14:41:18.085Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.emptydreams.xyz/admin/index.html</loc>
+    
+    <lastmod>2020-07-15T14:40:27.964Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.emptydreams.xyz/about/index.html</loc>
     
     <lastmod>2020-04-10T13:56:04.716Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.emptydreams.xyz/CodeGenerator/</loc>
-    
-    <lastmod>2020-04-10T13:42:26.327Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.emptydreams.xyz/tags/index.html</loc>
+    <loc>http://blog.emptydreams.xyz/tags/index.html</loc>
     
     <lastmod>2020-04-10T13:09:46.702Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.emptydreams.xyz/categories/index.html</loc>
+    <loc>http://blog.emptydreams.xyz/categories/index.html</loc>
     
     <lastmod>2020-04-10T13:08:47.184Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.emptydreams.xyz/LocalInnerClass/</loc>
-    
-    <lastmod>2020-03-28T13:06:19.357Z</lastmod>
     
   </url>
   
