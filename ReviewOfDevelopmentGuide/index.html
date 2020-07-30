@@ -141,13 +141,13 @@
     <div class='main'>
         <div class="content markdown animated fadeIn">
             <p>&emsp;&emsp;拿到书后迫不及待的大概的把书翻看了一遍，总体来说不太满意，感觉内容中难度上卡到了入门和熟练之间，读起来比较捉急，即没有真的把入门的东西讲全，也没有提到高级的东西。</p>
-<p>&emsp;&emsp;按照个人的建议，这本书并不适合Java和Forge的深度学习，学习Forge推荐阅读4z的<a href="https://fmltutor.ustc-zzzz.net/" target="_blank" rel="noopener">Minecraft 1.8.9 FML Mod 开发教程</a>以及<a href="[https://harbinger.covertdragon.tea](https://harbinger.covertdragon.team/)">先驱者教程</a>，其中4z的教程版本较老但是较为完善，先驱者是1.12.2版本但是内容不完善同时对新手不太友好，所以可以两个搭配食用。学习Java的话在文章尾部笔者罗列了一些书籍，读者可以选择性的阅读。</p>
+<p>&emsp;&emsp;按照个人的建议，这本书并不适合Java和Forge的深度学习，学习Forge推荐阅读4z的<a href="https://fmltutor.ustc-zzzz.net/" target="_blank" rel="noopener">Minecraft 1.8.9 FML Mod 开发教程</a>以及<a href="https://harbinger.covertdragon.team" target="_blank" rel="noopener">先驱者教程</a>，其中4z的教程版本较老但是较为完善，先驱者是1.12.2版本但是内容不完善同时对新手不太友好，所以可以两个搭配食用。学习Java的话在文章尾部笔者罗列了一些书籍，读者可以选择性的阅读。</p>
 <p>&emsp;&emsp;同时按照我个人的看法，开始写模组之前一定要熟练掌握Java编程，不然开发过程中会遇到很多问题。</p>
 <p>&emsp;&emsp;同时阅读的时候也发现了一些我个人认为有待改进、不严谨和错误的地方，这里简单罗列一下：</p>
 <h3 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h3><p>&emsp;&emsp;书中简要提及了代码风格的问题，但是说明的不够详细，详细介绍可以<a href="https://www.jianshu.com/p/e7d500f36da4" target="_blank" rel="noopener">看这里</a>，如果看完仍然不清楚的话可以自行百度查阅更多资料。</p>
 <h3 id="启动-调试模组的方式（P19）"><a href="#启动-调试模组的方式（P19）" class="headerlink" title="启动/调试模组的方式（P19）"></a>启动/调试模组的方式（P19）</h3><p>&emsp;&emsp;书中给出的方式是<code>gradlew.bat runClient</code>和<code>gradlew.bat runServer</code>，实际上如果使用<code>gradlew.bat genIntelliRuns</code>配置的运行方式应该是下图中的样子(其中的虚拟机选项、程序参数、使用模块的类路径与JRE默认不是这样子，服务端与这个类似)：<img src="https://blog.emptydreams.xyz/ReviewOfDevelopmentGuide/run.png" alt="客户端运行配置"></p>
-<h3 id="注册名称（P57…）"><a href="#注册名称（P57…）" class="headerlink" title="注册名称（P57…）"></a>注册名称（P57…）</h3><p>&emsp;&emsp;书中一直在使用<code>setRegistryName(String name)</code>方法设置名称，但是实际上推荐的设置方法是<code>setRegistryName(String modid, String name)</code>和<code>setRegistryName(ResourceLocation name)</code>。</p>
-<p>&emsp;&emsp;同时使用<code>ResourceLocation</code>时也推荐使用<code>new ResourceLocation(String resourceDomainIn, String resourcePathIn)</code>这个构造函数而不是<code>new ResourceLocation(resourceName)</code>，其中对于方块来讲，<code>resourceDomainIn</code>对应modid，<code>resourcePathIn</code>对应方块name。</p>
+<h3 id="注册名称（P57…）"><a href="#注册名称（P57…）" class="headerlink" title="注册名称（P57…）"></a>注册名称（P57…）</h3><p>&emsp;&emsp;书中一直在使用<code>setRegistryName(String name)</code>方法设置名称，虽然Forge可以自动推导modid，但是我个人仍然推荐使用<code>setRegistryName(String modid, String name)</code>、<code>setRegistryName(ResourceLocation name)</code>或者是<code>setRegistryName(&quot;modid:name&quot;)</code>。</p>
+<p>&emsp;&emsp;同时使用<code>ResourceLocation</code>时也建议使用<code>new ResourceLocation(String resourceDomainIn, String resourcePathIn)</code>这个构造函数而不是手动的拼接modid与方块名称，其中对于方块来讲，<code>resourceDomainIn</code>对应modid，<code>resourcePathIn</code>对应方块name。</p>
 <h3 id="垃圾回收机制（P58—倒数第三行）"><a href="#垃圾回收机制（P58—倒数第三行）" class="headerlink" title="垃圾回收机制（P58—倒数第三行）"></a>垃圾回收机制（P58—倒数第三行）</h3><blockquote>
 <p>每过一段时间就会检查JVM中部分对象或所有对象</p>
 </blockquote>
