@@ -104,205 +104,18 @@
             
             <a href="/dlog/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://blog.emptydreams.xyz/dlog/" data-id="ckgepo06u0000xwukh8a6gmzt" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://blog.emptydreams.xyz/dlog/" data-id="ckgeprn8v0002rcuk2w475n02" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>&emsp;&emsp;这里讲罗列出“现代工业”所有的更新记录以及更新内容的介绍。</p>
-<p>&emsp;&emsp;目前所有更新日志代号均以“#”开头，以后可能会有变更。</p>
-<p>&emsp;&emsp;关于项目的有关内容，可以查看“<a href="https://afdian.net/@emptydreams" target="_blank" rel="noopener">爱发电</a>”中的介绍。</p>
-<hr>
-<h2 id="新的更新"><a href="#新的更新" class="headerlink" title="新的更新"></a>新的更新</h2><h3 id="41-添加合成表显示"><a href="#41-添加合成表显示" class="headerlink" title="#41.添加合成表显示"></a>#41.添加合成表显示</h3><p>&emsp;&emsp;预期设计是点击机器的进度条可以查看该机器所有的合成表，不过目前由于网络通信的原因还未添加触发合成表显示的机制。以后还会为合成表添加更多的功能，例如：自动装填。</p>
-<h3 id="42-修复导线网络通信漏洞"><a href="#42-修复导线网络通信漏洞" class="headerlink" title="#42.修复导线网络通信漏洞"></a>#42.修复导线网络通信漏洞</h3><p>&emsp;&emsp;修复导线的网络通信中由于IDEA“重命名”功能的BUG出现的一些神奇的代码。</p>
-<h3 id="43-网络通信新功能——GUI通信"><a href="#43-网络通信新功能——GUI通信" class="headerlink" title="#43.网络通信新功能——GUI通信"></a>#43.网络通信新功能——GUI通信</h3><p>&emsp;&emsp;网络通信支持客户端与服务端GUI之间的<strong>互相通信</strong>。</p>
-<h3 id="44-GUI支持事件进行网络通信"><a href="#44-GUI支持事件进行网络通信" class="headerlink" title="#44.GUI支持事件进行网络通信"></a>#44.GUI支持事件进行网络通信</h3><p>&emsp;&emsp;MIFrame添加了用于支持注册的事件进行网路<strong>单向通信</strong>的接口，由于一些设计缺陷以及考虑到代码简洁性的原因，事件的网络通信暂时只支持客户端到服务端的通信（即只能由客户端发送信息到服务端）。</p>
-<hr>
-<h2 id="历史记录："><a href="#历史记录：" class="headerlink" title="历史记录："></a>历史记录：</h2><h3 id="1-项目的起点"><a href="#1-项目的起点" class="headerlink" title="#1 项目的起点"></a>#1 项目的起点</h3><p>&emsp;&emsp;成立现代工业（ModernIndustry）项目，并建立主类以及完成最为基础的架设，此时MI没有任何代码层面及用户层面的功能。</p>
-<h3 id="2-建立电力体系"><a href="#2-建立电力体系" class="headerlink" title="#2 建立电力体系"></a>#2 建立电力体系</h3><p>&emsp;&emsp;简单建立电力系统中的基础概念：发电机、用电器、导线。</p>
-<table>
-<thead>
-<tr>
-<th align="center">分类</th>
-<th align="right">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>发电机</strong></td>
-<td align="right">制造能量的机器全部归类于发电机</td>
-</tr>
-<tr>
-<td align="center"><strong>用电器</strong></td>
-<td align="right">消耗能量的机器全部归类与用电器</td>
-</tr>
-<tr>
-<td align="center"><strong>导线</strong></td>
-<td align="right">因为导线采用了和机器不同的算法，所以导线单独分类，用于传输能量</td>
-</tr>
-<tr>
-<td align="center">补充</td>
-<td align="right">储电器同时属于发电机与用电器分类，不属于导线</td>
-</tr>
-</tbody></table>
-<h3 id="3-一切的开端—第一个电器"><a href="#3-一切的开端—第一个电器" class="headerlink" title="#3 一切的开端—第一个电器"></a>#3 一切的开端—第一个电器</h3><p>&emsp;&emsp;创建了MI中的第一个机器——压缩机，不过其在电力系统完工之前不需要电能就可以运行，前期主要用于测试代码功能，在电力系统制作时为其添加了消耗电能的功能。</p>
-<h3 id="4-构建电力系统的基本框架"><a href="#4-构建电力系统的基本框架" class="headerlink" title="#4 构建电力系统的基本框架"></a>#4 构建电力系统的基本框架</h3><p>&emsp;&emsp;构建了电力系统的基本内容与规范，包括：电能概念、电压概念、EleWorker……</p>
-<table>
-<thead>
-<tr>
-<th align="center">分类</th>
-<th align="right">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">电能</td>
-<td align="right">用于表示能量数量的一个指示数字</td>
-</tr>
-<tr>
-<td align="center">电压</td>
-<td align="right">用于表示电压等级的一个指示数字，理论上支持所有非负整数，电压与电能无直接联系</td>
-</tr>
-<tr>
-<td align="center">EleWorker</td>
-<td align="right">电力系统的“工作核心”，系统的所有操作都封装在该类中</td>
-</tr>
-<tr>
-<td align="center">计数器</td>
-<td align="right">用于在用电器输入电压不符合需求电压时计数并在计数器达到阈值时执行指令的工具</td>
-</tr>
-<tr>
-<td align="center">线路缓存</td>
-<td align="right">用于存储线路计算的缓存信息，以此减少线路计算的时间和成本（可以选择不实现缓存功能）</td>
-</tr>
-</tbody></table>
-<h3 id="5-第一个导线"><a href="#5-第一个导线" class="headerlink" title="#5 第一个导线"></a>#5 第一个导线</h3><p>&emsp;&emsp;创建了MI中的第一种导线——粗制导线，也是开发前期阶段唯一可用的导线。导线中实现了信息存储、渲染、缓存三大功能，而线路计算则写入了缓存中。</p>
-<h5 id="线路计算原理："><a href="#线路计算原理：" class="headerlink" title="线路计算原理："></a>线路计算原理：</h5><p>&emsp;&emsp;在线路计算中，包含三大流程：寻找线路、计算线路、反馈信息。</p>
-<p>&emsp;&emsp;其中前两个流程可以用等价的方法替换，顺序也可以调整，但反馈信息必须在最后进行。</p>
-<table>
-<thead>
-<tr>
-<th align="center">分类</th>
-<th align="right">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>寻找线路</strong></td>
-<td align="right">寻找指定用电器到非指定发电机的路径</td>
-</tr>
-<tr>
-<td align="center"><strong>计算线路</strong></td>
-<td align="right">计算线路上损耗的电能及发电机最终输出的电能和电压</td>
-</tr>
-<tr>
-<td align="center"><strong>反馈信息</strong></td>
-<td align="right">向电力系统反馈计算结果，系统将根据结果进行数据更新</td>
-</tr>
-<tr>
-<td align="center">路径</td>
-<td align="right">表示线路中指定起点到指定终点经过的所有导线方块，包含起点与终点，不包含机器方块</td>
-</tr>
-<tr>
-<td align="center">非指定发电机</td>
-<td align="right">MI采用被动式电能运输，所以寻找线路时一般并不知道目标发电机的位置</td>
-</tr>
-<tr>
-<td align="center">被动式电能运输</td>
-<td align="right">用电器主动向电力系统发起传输电能的请求，然后由电力系统负责完成其余工作</td>
-</tr>
-</tbody></table>
-<p>&emsp;&emsp;不过MI中的粗制导线没有完全按照上述方法进行，而是按照：<code>读取缓存 -&gt; 计算线路 -&gt; 反馈信息</code>的流程工作。</p>
-<table>
-<thead>
-<tr>
-<th align="center">分类</th>
-<th align="right">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>读取缓存</strong></td>
-<td align="right">从发电机列表中直接寻找目标发电机，然后读取缓存</td>
-</tr>
-<tr>
-<td align="center"><strong>计算线路</strong></td>
-<td align="right">若缓存不存在则计算起点到终点的最短路径并写入缓存</td>
-</tr>
-<tr>
-<td align="center">发电机列表</td>
-<td align="right">一条线路中所有导线共享同一个缓存，每一根导线都负责维护缓存中的发电机列表</td>
-</tr>
-</tbody></table>
-<p>&emsp;&emsp;上述列出的第一种方式为粗制导线最初使用的工作流程，后因为技术原因替换为第二种。</p>
-<h3 id="6-发电机的出现"><a href="#6-发电机的出现" class="headerlink" title="#6 发电机的出现"></a>#6 发电机的出现</h3><p>&emsp;&emsp;添加了第一个发电机方块——无线电能方块，用于测试电力系统是否可以正常工作，也用于给玩家提供一个万能的创造模式用发电机。</p>
-<h3 id="7-完善电力系统框架"><a href="#7-完善电力系统框架" class="headerlink" title="#7 完善电力系统框架"></a>#7 完善电力系统框架</h3><p>&emsp;&emsp;这是对电力系统第N次重构，完善了电力系统的功能，删除了不需要的部分。从该版本起，缓存彻底被排除在电力系统规范外，是否实现缓存与电力系统工作没有任何关系。</p>
-<h3 id="8-合成表模块的第一次开发"><a href="#8-合成表模块的第一次开发" class="headerlink" title="#8 合成表模块的第一次开发"></a>#8 合成表模块的第一次开发</h3><p>&emsp;&emsp;原版的合成表本人并不会使用，所以干脆写了一个独立的合成表模块，其中所有内容都是可变的，拓展性较强，但存在结构混乱的缺陷。</p>
-<h3 id="9-加入自动化概念"><a href="#9-加入自动化概念" class="headerlink" title="#9 加入自动化概念"></a>#9 加入自动化概念</h3><p>&emsp;&emsp;建立了<code>registry</code>包，用于自动化注册方块、物品等内容，摆脱手动编码的烦恼。</p>
-<h3 id="10-自动化的推进"><a href="#10-自动化的推进" class="headerlink" title="#10 自动化的推进"></a>#10 自动化的推进</h3><p>&emsp;&emsp;除方块、物品的自动化注册外，又新提供了部分内容，此时自动化系统变得较为完善，包括以下内容：</p>
-<table>
-<thead>
-<tr>
-<th align="center">分类</th>
-<th align="right">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>方块、物品、TileEntity的注册</strong></td>
-<td align="right">基本游戏内容</td>
-</tr>
-<tr>
-<td align="center"><strong>网络通讯</strong></td>
-<td align="right">封装了网络通讯相关的代码，使服务端与客户端的沟通更加简便</td>
-</tr>
-<tr>
-<td align="center"><strong>数据存储</strong></td>
-<td align="right">支持部分数据类型的自动存储，拜托手动编码的烦恼，不过目前仍存在一些限制</td>
-</tr>
-<tr>
-<td align="center"><strong>GUI绘制</strong></td>
-<td align="right">支持运行时绘制GUI材质，拜托手动绘制材质及寻找组件坐标的烦恼</td>
-</tr>
-<tr>
-<td align="center"><strong>JSON生成</strong></td>
-<td align="right">自动生成方块、物品的JSON文件</td>
-</tr>
-</tbody></table>
-<h3 id="11-BUG修复"><a href="#11-BUG修复" class="headerlink" title="#11 BUG修复"></a>#11 BUG修复</h3><h3 id="12-GUI绘制"><a href="#12-GUI绘制" class="headerlink" title="#12 GUI绘制"></a>#12 GUI绘制</h3><p>&emsp;&emsp;完善GUI绘制的功能。</p>
-<h3 id="13-新的功能——属性"><a href="#13-新的功能——属性" class="headerlink" title="#13 新的功能——属性"></a>#13 新的功能——属性</h3><p>&emsp;&emsp;在工具使用时提供额外效果的玩意，有点类似于附魔。</p>
-<h3 id="14-工具类"><a href="#14-工具类" class="headerlink" title="#14 工具类"></a>#14 工具类</h3><p>&emsp;&emsp;提供了一系列<code>Util</code>类，封装了一些常用操作，缩减了代码量。</p>
-<h3 id="15-时刻表"><a href="#15-时刻表" class="headerlink" title="#15 时刻表"></a>#15 时刻表</h3><p>&emsp;&emsp;用于在指定时间后执行指定操作，因为某些功能限制，在<code>#38</code>时被移除。</p>
-<h3 id="16-添加一系列物品及机器"><a href="#16-添加一系列物品及机器" class="headerlink" title="#16 添加一系列物品及机器"></a>#16 添加一系列物品及机器</h3><h3 id="17-GUI绘制的完善"><a href="#17-GUI绘制的完善" class="headerlink" title="#17 GUI绘制的完善"></a>#17 GUI绘制的完善</h3><p>&emsp;&emsp;解决了GUI绘制坐标点寻找烧脑的问题，彻底摆脱思考，同时优化了性能。</p>
-<h3 id="18-重写合成表模块"><a href="#18-重写合成表模块" class="headerlink" title="#18 重写合成表模块"></a>#18 重写合成表模块</h3><p>&emsp;&emsp;因为合成表模块结构过于混乱，没有任何易用性及美观性，所以重新设计、编写了合成表模块：</p>
-<table>
-<thead>
-<tr>
-<th align="center">分类</th>
-<th align="right">介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>CraftGuide&lt;T, R&gt;</code></td>
-<td align="right">创建、管理合成表，数据可变</td>
-</tr>
-<tr>
-<td align="center"><code>ItemSol</code></td>
-<td align="right">存储物品列表，可有序可无序，数据不可变</td>
-</tr>
-<tr>
-<td align="center"><code>ItemElement</code></td>
-<td align="right">存储单个物品，数据不可变</td>
-</tr>
-<tr>
-<td align="center"><code>IShape</code></td>
-<td align="right">合成表，内部存储原料列表和产物列表，可有序可无序，数据不可变</td>
-</tr>
-</tbody></table>
-<h3 id="19-修复线路计算中的问题"><a href="#19-修复线路计算中的问题" class="headerlink" title="#19 修复线路计算中的问题"></a>#19 修复线路计算中的问题</h3><p>&emsp;&emsp;将线路计算方式换为<code>#5</code>中的第二种方式。</p>
-<h3 id="24-优化自动数据存储"><a href="#24-优化自动数据存储" class="headerlink" title="#24 优化自动数据存储"></a>#24 优化自动数据存储</h3><p>&emsp;&emsp;减少了存储类名需要的成本</p>
-<h3 id="34-优化扳手的玩法"><a href="#34-优化扳手的玩法" class="headerlink" title="#34 优化扳手的玩法"></a>#34 优化扳手的玩法</h3><h3 id="35-完善自动注册的功能"><a href="#35-完善自动注册的功能" class="headerlink" title="#35 完善自动注册的功能"></a>#35 完善自动注册的功能</h3><p>&emsp;&emsp;使自动注册支持对物品、方块列表进行排序，保证在每次创建存档时创造模式物品栏中的排列顺序不变化。</p>
-<h3 id="36-第一次材质扩充"><a href="#36-第一次材质扩充" class="headerlink" title="#36 第一次材质扩充"></a>#36 第一次材质扩充</h3><h3 id="37-增强合成表模块"><a href="#37-增强合成表模块" class="headerlink" title="#37 增强合成表模块"></a>#37 增强合成表模块</h3><p>&emsp;&emsp;修改了MC原版注册JSON合成表的方法，在其中加入了注册MI的JSON合成表的代码，自此注册合成表可以不再面对繁杂的代码编写。</p>
-<h3 id="38-修复服务端支持"><a href="#38-修复服务端支持" class="headerlink" title="#38 修复服务端支持"></a>#38 修复服务端支持</h3><p>&emsp;&emsp;修复因代码问题导致的服务端启动崩溃。</p>
-<h3 id="39-GUI添加鼠标事件"><a href="#39-GUI添加鼠标事件" class="headerlink" title="#39 GUI添加鼠标事件"></a>#39 GUI添加鼠标事件</h3><p>&emsp;&emsp;GUI支持鼠标事件，在鼠标移出、移入、按下、松开或点击控件时会自动调用控件的方法（前提是控件注册了相关事件）。一个控件可以重复注册同一种事件，在事件被触发时所有相同事件都会被触发，不会被遗漏。</p>
-<h3 id="40-优化自动化网络传输结构"><a href="#40-优化自动化网络传输结构" class="headerlink" title="#40 优化自动化网络传输结构"></a>#40 优化自动化网络传输结构</h3><p>&emsp;&emsp;自动化网络传输采用“注册”结构，添加新的网络传输方式变得更加方便。同时网络传输不再主动询问用户是否需要发送信息，更加偏向半自动化，采用用户主动向网络传输系统发送请求的方式，减少了运行开支。</p>
-
+        <p>&emsp;&emsp;这里讲罗列出“现代工业”所有的更新记录以及更新内容的介绍。</p>
+        
+          <p class="article-more-link">
+            <a href="/dlog/#more" class="more-link">更多内容 <span class="meta-nav">→</span></a>
+          </p>
+        
       
     </div><!-- .entry-content -->
 
@@ -348,206 +161,18 @@
             
             <a href="/ReviewOfDevelopmentGuide/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://blog.emptydreams.xyz/ReviewOfDevelopmentGuide/" data-id="ckgepo0740006xwuk49f244s2" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://blog.emptydreams.xyz/ReviewOfDevelopmentGuide/" data-id="ckgeprn8z0006rcukbyv1ctag" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <p>&emsp;&emsp;拿到书后迫不及待的大概的把书翻看了一遍，总体来说不太满意，感觉内容中难度上卡到了入门和熟练之间，读起来比较捉急，即没有真的把入门的东西讲全，也没有提到高级的东西。</p>
-<p>&emsp;&emsp;按照个人的建议，这本书并不适合Java和Forge的深度学习，学习Forge推荐阅读4z的<a href="https://fmltutor.ustc-zzzz.net/" target="_blank" rel="noopener">Minecraft 1.8.9 FML Mod 开发教程</a>以及<a href="https://harbinger.covertdragon.team" target="_blank" rel="noopener">先驱者教程</a>，其中4z的教程版本较老但是较为完善，先驱者是1.12.2版本但是内容不完善同时对新手不太友好，所以可以两个搭配食用。学习Java的话在文章尾部笔者罗列了一些书籍，读者可以选择性的阅读。</p>
-<p>&emsp;&emsp;同时按照我个人的看法，开始写模组之前一定要熟练掌握Java编程，不然开发过程中会遇到很多问题。</p>
-<p>&emsp;&emsp;同时阅读的时候也发现了一些我个人认为有待改进、不严谨和错误的地方，这里简单罗列一下：</p>
-<h3 id="代码风格"><a href="#代码风格" class="headerlink" title="代码风格"></a>代码风格</h3><p>&emsp;&emsp;书中简要提及了代码风格的问题，但是说明的不够详细，详细介绍可以<a href="https://www.jianshu.com/p/e7d500f36da4" target="_blank" rel="noopener">看这里</a>，如果看完仍然不清楚的话可以自行百度查阅更多资料。</p>
-<h3 id="启动-调试模组的方式（P19）"><a href="#启动-调试模组的方式（P19）" class="headerlink" title="启动/调试模组的方式（P19）"></a>启动/调试模组的方式（P19）</h3><p>&emsp;&emsp;书中给出的方式是<code>gradlew.bat runClient</code>和<code>gradlew.bat runServer</code>，实际上如果使用<code>gradlew.bat genIntelliRuns</code>配置的运行方式应该是下图中的样子(其中的虚拟机选项、程序参数、使用模块的类路径与JRE默认不是这样子，服务端与这个类似)：<img src="https://blog.emptydreams.xyz/ReviewOfDevelopmentGuide/run.png" alt="客户端运行配置"></p>
-<h3 id="注册名称（P57…）"><a href="#注册名称（P57…）" class="headerlink" title="注册名称（P57…）"></a>注册名称（P57…）</h3><p>&emsp;&emsp;书中一直在使用<code>setRegistryName(String name)</code>方法设置名称，虽然Forge可以自动推导modid，但是我个人仍然推荐使用<code>setRegistryName(String modid, String name)</code>、<code>setRegistryName(ResourceLocation name)</code>或者是<code>setRegistryName(&quot;modid:name&quot;)</code>。</p>
-<p>&emsp;&emsp;同时使用<code>ResourceLocation</code>时也建议使用<code>new ResourceLocation(String resourceDomainIn, String resourcePathIn)</code>这个构造函数而不是手动的拼接modid与方块名称，其中对于方块来讲，<code>resourceDomainIn</code>对应modid，<code>resourcePathIn</code>对应方块name。</p>
-<h3 id="垃圾回收机制（P58—倒数第三行）"><a href="#垃圾回收机制（P58—倒数第三行）" class="headerlink" title="垃圾回收机制（P58—倒数第三行）"></a>垃圾回收机制（P58—倒数第三行）</h3><blockquote>
-<p>每过一段时间就会检查JVM中部分对象或所有对象</p>
-</blockquote>
-<p>&emsp;&emsp;这句话实际上不严谨，GC（垃圾回收器）不会按照固定的时间进行回收，只会在满足特定条件时进行回收，至于检查所有对象还是部分对象，不同的垃圾回收器以及不同的收集方式会有所区别，这里不进行深究，读者感兴趣可以去查阅<a href="https://book.douban.com/subject/6522893/" target="_blank" rel="noopener">《深入理解Java虚拟机：JVM高级特性与最佳实践》</a>中的相关章节，书中详细说明了GC的相关算法与实现。</p>
-<h3 id="SideOnly注解（P62—代码下方）"><a href="#SideOnly注解（P62—代码下方）" class="headerlink" title="SideOnly注解（P62—代码下方）"></a>SideOnly注解（P62—代码下方）</h3><blockquote>
-<p>@SideOnly的作用是表明这个方法只作用于客户端</p>
-</blockquote>
-<p>&emsp;&emsp;实际上应该是<code>@SideOnly(CLIENT)</code>表明被修饰的元素只作用于客户端（@SideOnly可以修饰类、方法和字段），同时<code>@SideOnly(SERVER)</code>在普通开发中一般见不到，因为一旦使用了这个注解，那么模组将无法在本地游戏中使用被注解的元素。</p>
-<h3 id="材质大小（P63—最后一行）"><a href="#材质大小（P63—最后一行）" class="headerlink" title="材质大小（P63—最后一行）"></a>材质大小（P63—最后一行）</h3><blockquote>
-<p>PNG文件本身大小应该是16像素x16像素，不过32像素x32像素的PNG图片也是可行的</p>
-</blockquote>
-<p>&emsp;&emsp;做过材质的读者应该知道，MC中的材质大小只需要是2的整次幂就可以了（2，4，8，16……）。</p>
-<h3 id="未说明的代码"><a href="#未说明的代码" class="headerlink" title="未说明的代码"></a>未说明的代码</h3><p>&emsp;&emsp;书中有多处给出了代码却没有说明用途的地方，如<code>Block</code>的构造函数、<code>GuiContainer#renderHoveredToolTip(int, int)</code>等。</p>
-<h3 id="书写错误"><a href="#书写错误" class="headerlink" title="书写错误"></a>书写错误</h3><blockquote>
-<p>1.这是我们第一次编写拥有返回值的方法，也就是返回值声明为void。</p>
-<p>​                                                                            —— P71 · 第一行</p>
-<p>2.IntelliJ IDEA 提出了两个方案——实现对应方法，并把这个类同样变成抽象类。</p>
-<p>​                                                                            —— P83 · 第四行</p>
-<p>3.返回值是EnumActionResult.PASS的情况都将被视为成功执行，并忽略副手上的物品。</p>
-<p>​                                                                            —— P226 · 第七行</p>
-</blockquote>
-<p>1). 应该为：这是我们第一次编写拥有返回值的方法，也就是返回值声明为<code>非void</code>。| 书中写成了”void”。</p>
-<p>2). 应该为：IntelliJ IDEA 提出了两个方案——实现对应方法，<code>或</code>把这个类同样变成抽象类。| 书中将“或”写为了“并”。</p>
-<p>3). 应该为：返回值是<code>EnumActionResult.SUCCESS</code>的情况都将被视为成功执行，并忽略副手上的物品。 | 书中将“SUCCESS”写成了“PASS”。</p>
-<h3 id="ItemStack类（P85—倒数第三行）"><a href="#ItemStack类（P85—倒数第三行）" class="headerlink" title="ItemStack类（P85—倒数第三行）"></a>ItemStack类（P85—倒数第三行）</h3><blockquote>
-<p>这个数量在大部分情况下可以是1到64之间的任意值，当然，对于调用了setMaxStackSize方法，也就是设置了最大堆叠的物品，最大数字可能小于64。</p>
-</blockquote>
-<p>&emsp;&emsp;这里只是补充一下，就算设置的最大值，也可以突破这个数值，极端一点的说，就算你设置了最大数值为”1”，也可以通过<code>setCount(int)</code>、<code>grow(int)</code>等方法使堆叠数量超过这个数值，不过开发中建议不要超过最大数量。</p>
-<h3 id="缺失的注解（P89—第一段代码）"><a href="#缺失的注解（P89—第一段代码）" class="headerlink" title="缺失的注解（P89—第一段代码）"></a>缺失的注解（P89—第一段代码）</h3><p>&emsp;&emsp;文中明确说明“为覆盖用的方法也加上这一注解”，但是在下方代码中并没有出现<code>@sideOnly</code>注解，同时这句话我感觉应该是多写了一个“用”字。</p>
-<h3 id="被忽视的工具（P90）"><a href="#被忽视的工具（P90）" class="headerlink" title="被忽视的工具（P90）"></a>被忽视的工具（P90）</h3><p>&emsp;&emsp;文中提到了挖掘速度，指出速度等级为：木 &lt; 石 &lt; 铁 &lt; 钻石，但是其中漏掉了“金”，加上金的排序如下：木 &lt; 石 &lt; 铁 &lt; 钻石 &lt; 金。</p>
-<h3 id="更为方便的数组声明方式（P101—最后一行）"><a href="#更为方便的数组声明方式（P101—最后一行）" class="headerlink" title="更为方便的数组声明方式（P101—最后一行）"></a>更为方便的数组声明方式（P101—最后一行）</h3><p>&emsp;&emsp;书中使用<code>int[] intArray = new int[] {1, 2, 3, 4}</code>创建了数组，其实也可以简写为<code>int[] intArray = {1, 2, 3, 4}</code>。</p>
-<h3 id="冗余的对象比较方式（P120—最后一段代码）"><a href="#冗余的对象比较方式（P120—最后一段代码）" class="headerlink" title="冗余的对象比较方式（P120—最后一段代码）"></a>冗余的对象比较方式（P120—最后一段代码）</h3><p>&emsp;&emsp;虽然这么写比较没有问题，但是可以简写为：</p>
-<pre><code class="java">Blocks.DIRT.getRegistryName().equals(registryName)</code></pre>
-<p>&emsp;&emsp;或者使用更直白的方式：</p>
-<pre><code class="java">Item.getItemFromBlock(Blocks.DIRT) == event.getItemStack().getItem()</code></pre>
-<h3 id="未说明的hashCode-方法（P121）"><a href="#未说明的hashCode-方法（P121）" class="headerlink" title="未说明的hashCode()方法（P121）"></a>未说明的<code>hashCode()</code>方法（P121）</h3><p>&emsp;&emsp;书中简单叙述了<code>equals(Object)</code>方法，但是却漏掉了<code>hashCode()</code>方法。在开发过程中，如果一个类重写了<code>equals(Object)</code>方法，那么它就应当也重写<code>hashCode()</code>方法，如果只重写其中一个，那么这个类将无法更好的与集合类合作。因为集合类为了优化性能，在比较对象时会优先比较hashCode，如果hashCode不同那么这两个对象一定不相等，如果相同再调用<code>equals(Object)</code>确保对象一致。</p>
-<p>&emsp;&emsp;关于<code>hashCode()</code>方法这里就不详细说明了，读者可以查阅相关文章<a href="https://www.cnblogs.com/zhchoutai/p/8676351.html" target="_blank" rel="noopener">(CSND)</a>。</p>
-<h3 id="生成器模式（P167）"><a href="#生成器模式（P167）" class="headerlink" title="生成器模式（P167）"></a>生成器模式（P167）</h3><p>&emsp;&emsp;书中简要叙述了“生成器模式”，不过没有提到其它模式让人感觉有些可惜，读者<a href="http://c.biancheng.net/design_pattern/" target="_blank" rel="noopener">可以到这里</a>查阅相关内容，网页中不是所有模式都需要阅读，阅读：单例模式、工厂模式、建造者模式（即生成器模式）、代理模式、观察者模式、访问者模式即可。</p>
-<p>&emsp;&emsp;不过小伙伴Java语言基础不怎么好的话可以先不看，留着以后阅读就好。</p>
-<h3 id="漏写的代码（P168）"><a href="#漏写的代码（P168）" class="headerlink" title="漏写的代码（P168）"></a>漏写的代码（P168）</h3><p>&emsp;&emsp;书中写了<code>FooBuilder.create()</code>这样子的代码，但是每行都忘记在末尾加上<code>.build()</code>了。</p>
-<h3 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h3><p>&emsp;&emsp;关于装箱与拆箱这里做一个补充：在能使用基本类型的时候不要使用包装类型，因为使用包装类型很可能会带来“许多”不必要的装箱与拆箱，会较为严重的影响程序性能。</p>
-<h3 id="识别NBT类型（P216）"><a href="#识别NBT类型（P216）" class="headerlink" title="识别NBT类型（P216）"></a>识别NBT类型（P216）</h3><blockquote>
-<p>nbt instanceof NBTTagByte：检查nbt是否是byte类型的数据</p>
-</blockquote>
-<p>&emsp;&emsp;同样这里只做一个简单的补充：NBT中<code>boolean</code>类型同样是以<code>NBTTagByte</code>的形式存储的。</p>
-<h3 id="过于简单的提及meta（P256）"><a href="#过于简单的提及meta（P256）" class="headerlink" title="过于简单的提及meta（P256）"></a>过于简单的提及meta（P256）</h3><p>&emsp;&emsp;关于meta书中只说明了只能使用4位，却没有提及二进制运算，实在令人感到可惜，读者可以阅读这篇文章了解<a href="https://www.cnblogs.com/shuaiding/p/11124974.html" target="_blank" rel="noopener">二进制（位）运算</a>。</p>
-<p>&emsp;&emsp;同时书中给的代码其实是无法正常运行的，在游戏启动时会造成崩溃，应该写为如下形式：</p>
-<pre><code class="java">EnumFacing facing = EnumFacing.getHorizontal(meta);
-if (facing.getAxis() == EnumFacing.Axis.Y) {
-    facing = EnumFacing.NORTH;
-}
-return getDefaultState().widthProperty(FACING, facing);</code></pre>
-<h3 id="混淆for与for-each（P272）"><a href="#混淆for与for-each（P272）" class="headerlink" title="混淆for与for-each（P272）"></a>混淆for与for-each（P272）</h3><blockquote>
-<p>以for开头的语句被称为for-each循环语句。</p>
-</blockquote>
-<p>&emsp;&emsp;实际上，只有如下形式的循环成为<code>for-each循环</code>，其他都成为<code>for循环</code></p>
-<pre><code class="java">//&quot;var&quot;指数据类型，&quot;array&quot;指支持for-each循环的类型
-for (var i : array) {
-    //do something......
-}</code></pre>
-<p>&emsp;&emsp;另外提一点，并非只有数组支持for-each循环，所有实现了<code>Collection&lt;E&gt;</code>接口的类都可以支持for-each循环。</p>
-<h3 id="误用for-each循环（P272）"><a href="#误用for-each循环（P272）" class="headerlink" title="误用for-each循环（P272）"></a>误用for-each循环（P272）</h3><p>&emsp;&emsp;文中写了下面这样的代码：</p>
-<pre><code class="java">int[] range = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8};
-for (int i : range) {
-    //do something......
-}</code></pre>
-<p>&emsp;&emsp;但是for-each循环的目的不是为了循环指定次数，而是用于遍历，循环指定次数应当使用如下代码：</p>
-<pre><code class="java">for (int i = 0; i &lt; 8; ++i) {
-    //do something......
-}</code></pre>
-<h3 id="排版问题"><a href="#排版问题" class="headerlink" title="排版问题"></a>排版问题</h3><p>&emsp;&emsp;书中代码的排版问题还是很明显的，这里罗列一个（P226）：</p>
-<pre><code class="java">@Override
-protected void onImact(RayTraceResult result)
-{
-    if (!this.world.isRemote)
-    {
-        if (result.entityHit != null)
-        {
-            float amount = 6.0F;
-            DamageSource source = DamageSource.causeThrownDamage(this, this
-.getThrower());
-            if (result.entityHit instanceof EntityLivingBase)
-            {
-                EntityLivingBase target = ((EntityLivingBase) result.entityHit);
-                if (target.isPotionActive(PotionRegistryHandler.POTION_DIRT_
-PROTECTION))
-                {
-                    PotionEffect effect = target.getActivePotionEffect(PotionRegi
-stryHandler.POTION_DIRT_PROTECTION);
-                    amount = effect.getAmplifier() &gt; 0 ? 0 : amount / 2;
-                }
-            }
-            result.entityHit.attackEntityFrom(source, amount);
-        }
-        this.setDead();
-    }
-}</code></pre>
-<p>&emsp;&emsp;这段代码看起来无疑是非常混乱的，那么有没有办法让代码打印出来依然美观呢？答案是有的，有两种方法，第一种简单粗暴，直接贴张截图就可以了；另一种则是修改代码的样式。</p>
-<p>&emsp;&emsp;比如说这段代码，我们可以看到缩进浪费了很多空间，那么我们可以把前两个<code>if</code>改成下面这种形式：</p>
-<pre><code class="java">if (this.world.isRemote) return;
-if (result.entityHit == null)
-{
-    this.setDead();
-    return;
-}</code></pre>
-<p>&emsp;&emsp;这样子后面的代码就不需要缩进了，并且阅读代码的人看到前面的代码就能非常清楚的知道：这段代码在这两种情况下是不需要执行后面的逻辑的，按照原本的写法，读者还需要继续往下看，直到找到其对应的<code>}</code>然后发现原来这个情况是没有任何代码需要执行的。实际上在开发中，也建议使用后面的写法，会使代码更加的清晰易懂。</p>
-<p>&emsp;&emsp;但是很明显，就算消除了缩进，中间最长的代码依然超出了打印的最大宽度，那么如何解决？很简单，仔细阅读就会发现代码中一个静态常量使用了两次，那么为了缩短打印出来的代码，我们可以使用<code>import static</code>或者直接干脆告诉读者因为印刷原因xxx简写成xxx来完成。同时我们也可以省去<code>this</code>，或者使用“伪代码”来节省版面。</p>
-<p>&emsp;&emsp;经过简单的修改，代码就变成了下面这样，是不是好看了很多：</p>
-<pre><code class="java">//import static PotionRegistryHandler.POTION_DIRT_PROTECTION
-@Override
-protected void onImact(RayTraceResult result)
-{
-    if (this.world.isRemote) return;
-    if (result.entityHit == null)
-    {
-        this.setDead();
-        return;
-    }
-
-    float amount = 6.0F;
-    DamageSource source = DamageSource.causeThrownDamage(this, getThrower());
-    if (result.entityHit instanceof EntityLivingBase)
-    {
-        EntityLivingBase target = ((EntityLivingBase) result.entityHit);
-        if (target.isPotionActive(POTION_DIRT_PROTECTION))
-        {
-            PotionEffect effect = target.getActivePotionEffect(POTION_DIRT_PROTECTION);
-            amount = effect.getAmplifier() &gt; 0 ? 0 : amount / 2;
-        }
-    }
-    result.entityHit.attackEntityFrom(source, amount);
-    setDead();
-}</code></pre>
-<p>&emsp;&emsp;我们再举一个栗子，比如说P239的代码：</p>
-<pre><code class="java">mc.ingameGUI.drawTexturedModalRect(width / 2 - 170, height - 35, orange &lt; 4 ? 0 : 9, 0, 9, 9);
-mc.ingameGUI.drawTexturedModalRect(width / 2 - 170, height - 24, green &lt; 4 ? 0 : 9, 0, 9, 9);
-......</code></pre>
-<p>&emsp;&emsp;首先，我们看到代码中有一个重复出现的量，即：<code>width / 2 - 170</code>，那么我们可以把它保存下来，变成下面这样的代码：</p>
-<pre><code class="java">int x = width / 2 - 170;
-mc.ingameGUI.drawTexturedModalRect(x, height - 35, orange &lt; 4 ? 0 : 9, 0, 9, 9);
-mc.ingameGUI.drawTexturedModalRect(x, height - 24, green &lt; 4 ? 0 : 9, 0, 9, 9);
-......</code></pre>
-<p>&emsp;&emsp;这里我们假设一个情况，就是已经缩短到最简，无法进行任何缩减了该怎么办？比如P242的代码：</p>
-<pre><code class="java">    private static final FMLEventChannel CHANNEL = NetworkRegistry.INSTANCE.
-newEventDrivenChannel(NAME);</code></pre>
-<p>&emsp;&emsp;虽然可以使用<code>import static</code>进行缩短，但是这里我们换一种方法，就是拆分，把一行代码写成多行：</p>
-<pre><code class="java">private static final FMLEventChannel CHANNEL =
-                NetworkRegistry.INSTANCE.newEventDrivenChannel(NAME);</code></pre>
-<h3 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h3><p>&emsp;&emsp;这里我罗列出一些我看过的感觉还不错的编程书，大家可以根据自己的需求阅读：</p>
-<table>
-<thead>
-<tr>
-<th align="center">归类</th>
-<th align="right">书籍名称</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">入门</td>
-<td align="right">Java从入门到精通</td>
-</tr>
-<tr>
-<td align="center">入门</td>
-<td align="right">Java编程思想</td>
-</tr>
-<tr>
-<td align="center">提升</td>
-<td align="right">Effective Java</td>
-</tr>
-<tr>
-<td align="center">提升</td>
-<td align="right">Java数据结构与算法</td>
-</tr>
-<tr>
-<td align="center">提升</td>
-<td align="right">重构：改善既有代码的设计</td>
-</tr>
-<tr>
-<td align="center">提升</td>
-<td align="right">Java8 实战</td>
-</tr>
-<tr>
-<td align="center">拔高</td>
-<td align="right">深入理解Java虚拟机：JVM高级特性与最佳实践</td>
-</tr>
-</tbody></table>
-
+        <p>&emsp;&emsp;经过漫长的等待终于拿到书了，迫不及待地大致的把书翻看了一遍，今天就简单的谈一下阅读时发现的问题。</p>
+        
+          <p class="article-more-link">
+            <a href="/ReviewOfDevelopmentGuide/#more" class="more-link">更多内容 <span class="meta-nav">→</span></a>
+          </p>
+        
       
     </div><!-- .entry-content -->
 
@@ -593,7 +218,7 @@ newEventDrivenChannel(NAME);</code></pre>
             
             <a href="/LocalInnerClass/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://blog.emptydreams.xyz/LocalInnerClass/" data-id="ckgepo06z0002xwuk359m9ter" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://blog.emptydreams.xyz/LocalInnerClass/" data-id="ckgeprn8q0000rcuk2ywoc0jz" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
