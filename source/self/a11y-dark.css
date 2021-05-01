@@ -28,13 +28,7 @@
   --hlexpand-bg: #d3af86;
 }
 
-
-作者: Jerry
-連結: https://butterfly.js.org/posts/b37b5fe3/
-來源: Butterfly
-著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。
-
-.hljs {
+#article-container figure.highlight .hljs {
   background: #2b2b2b;
   color: #f8f8f2;
 }
