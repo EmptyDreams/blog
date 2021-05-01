@@ -1,0 +1,126 @@
+/*!
+  Theme: a11y-dark
+  Author: @ericwbailey
+  Maintainer: @ericwbailey
+  Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css
+*/
+
+/* 新添加的内容
+  ------------------------------------- 
+  --hl-color                  代码框字体顔色 【必须】 (把下面.hljs的 color复製到这里来)
+  --hl-bg                     代码框背景色 【必须】 (把下面.hljs的 background复製到这里来)
+  --hltools-bg: #321a0f       代码框顶部工具栏背景色 【可选】(如果你关掉了 copy、lang 和 shrink,可不用配置这个）
+  --hltools-color: #fff       代码框顶部工具栏字体顔色 【可选】(如果你关掉了 copy、lang 和 shrink,可不用配置这个）
+  --hlnumber-bg: #221a0f      代码框行数背景色 【可选】(如果已经关掉 line_number,可以不用配置这个)
+  --hlnumber-color: #fff      代码框行数字体顔色 【可选】 (如果已经关掉 line_number,可以不用配置这个)
+  --hlscrollbar-bg: #d3af86   代码框滚动条顔色 【可选】（默认为主题主顔色）
+  --hlexpand-bg: #d3af86      代码框底部展开背景色 【可选】(如果已经关掉 highlight_height_limit,可以不用配置这个)
+*/
+
+:root {
+  --hl-color: #f8f8f2;
+  --hl-bg: #2b2b2b;
+  --hltools-bg: #321a0f;
+  --hltools-color: #fff;
+  --hlnumber-bg: #221a0f;
+  --hlnumber-color: #fff;
+  --hlscrollbar-bg: #d3af86;
+  --hlexpand-bg: #d3af86;
+}
+
+
+作者: Jerry
+連結: https://butterfly.js.org/posts/b37b5fe3/
+來源: Butterfly
+著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。
+
+.hljs {
+  background: #2b2b2b;
+  color: #f8f8f2;
+}
+
+/* Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #d4d0ab;
+}
+
+/* Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #ffa07a;
+}
+
+/* Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f5ab35;
+}
+
+/* Yellow */
+.hljs-attribute {
+  color: #ffd700;
+}
+
+/* Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #abe338;
+}
+
+/* Blue */
+.hljs-title,
+.hljs-section {
+  color: #00e0e0;
+}
+
+/* Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #dcc6e0;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-built_in,
+  .hljs-bullet,
+  .hljs-comment,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-type,
+  .hljs-quote {
+        color: highlight;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag {
+        font-weight: bold;
+    }
+}
