@@ -6,5 +6,4 @@ node_modules/
 public/
 .deploy*/
 资源文档/
-themes/butterfly/.git/
-themes/butterfly/.github/
+themes/butterfly/git_about/
