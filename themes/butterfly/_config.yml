@@ -536,8 +536,8 @@ activate_power_mode:
 
 # Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
 fireworks:
-  enable: true
-  zIndex: 9999 # -1 or 9999
+  enable: false
+  zIndex: 5000 # -1 or 9999
   mobile: false
 
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
@@ -547,12 +547,12 @@ click_heart:
 
 # Mouse click effects: words (鼠標點擊效果: 文字)
 ClickShowText:
-  enable: false
+  enable: true
   text:
-    # - I
-    # - LOVE
-    # - YOU
-  fontSize: 15px
+     - J
+     - A
+     - V
+  fontSize: 12px
   mobile: false
 
 # Default display mode (網站默認的顯示模式)
