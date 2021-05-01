@@ -37,6 +37,10 @@ maxWidth900()
   @media screen and (max-width: 900px)
     {block}
 
+minWidth901()
+  @media screen and (min-width: 901px)
+    {block}
+
 minWidth900()
   @media screen and (min-width: 900px)
     {block}
@@ -49,7 +53,7 @@ minWidth2000()
 if hexo-config('enter_transitions')
   #content-inner,
   #footer
-    animation: main 1s
+    animation: bottom-top 1s
 
   #page-header
     animation: header-effect 1s
@@ -68,27 +72,7 @@ if hexo-config('enter_transitions')
   #ribbon-canvas
     animation: ribbon_to_show 4s
 
-  .tocOpenPc
-    .sidebar-toc__title
-      animation: tocsidebarLtoR .5s
-
-    .sidebar-toc__progress
-      animation: tocsidebarLtoR .7s
-
-    .sidebar-toc__content
-      animation: tocsidebarLtoR .9s
-
-  .tocOpenMobile
-    .sidebar-toc__title
-      animation: tocsidebarRtoL .4s
-
-    .sidebar-toc__progress
-      animation: tocsidebarRtoL .6s
-
-    .sidebar-toc__content
-      animation: tocsidebarRtoL .7s
-
-  #mobile-sidebar-menus
+  #sidebar-menus
     &.open
       for i in 1 2 3 4
         > :nth-child({i})
@@ -137,14 +121,14 @@ if hexo-config('avatar.effect') == true
   100%
     transform: translateY(0)
 
-@keyframes main
+@keyframes bottom-top
   0%
     opacity: 0
-    transform: translateY(50px)
+    margin-top: 50px
 
   100%
     opacity: 1
-    transform: translateY(0)
+    margin-top: 0
 
 @keyframes titlescale
   0%
@@ -170,6 +154,13 @@ if hexo-config('avatar.effect') == true
 
   100%
     opacity: 1
+
+@keyframes to_hide
+  0%
+    opacity: 1
+
+  100%
+    opacity: 0
 
 @keyframes ribbon_to_show
   0%
@@ -214,20 +205,6 @@ if hexo-config('avatar.effect') == true
 @keyframes sidebarItem
   0%
     transform: translateX(200px)
-
-  100%
-    transform: translateX(0)
-
-@keyframes tocsidebarRtoL
-  0%
-    transform: translateX(200px)
-
-  100%
-    transform: translateX(0)
-
-@keyframes tocsidebarLtoR
-  0%
-    transform: translateX(-200px)
 
   100%
     transform: translateX(0)

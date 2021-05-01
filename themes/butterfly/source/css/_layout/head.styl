@@ -69,7 +69,7 @@
       font-size: 30px
 
   // page
-  &.not-index-bg
+  &.not-home-page
     height: 20rem
 
     +maxWidth768()
@@ -101,7 +101,22 @@
       background-color: alpha($dark-black, .5)
       content: ''
 
-  &.no-top-img
+  #post-info
+    position: absolute
+    bottom: 5rem
+    padding: 0 8%
+    width: 100%
+    text-align: center
+
+    +maxWidth900()
+      bottom: 1.5rem
+      text-align: left
+
+    +maxWidth768()
+      bottom: 1.1rem
+      padding: 0 1.1rem
+
+  &.not-top-img
     margin-bottom: .5rem
     height: 60px
     background: 0
@@ -114,30 +129,77 @@
         color: var(--font-color)
         text-shadow: none
 
-  #post-info
-    position: absolute
-    bottom: 1.5rem
-    padding: 0 8%
-    width: 100%
-    text-align: left
+  &.nav-fixed
+    #nav
+      position: fixed
+      top: -60px
+      z-index: 91
+      background: rgba(255, 255, 255, .8)
+      box-shadow: 0 5px 6px -5px alpha($grey, .6)
+      transition: transform .2s ease-in-out, opacity .2s ease-in-out
 
-    +maxWidth768()
-      bottom: 1.1rem
-      padding: 0 1.1rem
+      a,
+      #site-name,
+      #toggle-menu
+        color: var(--font-color)
+        text-shadow: none
+
+        &:hover
+          color: $light-blue
+
+  &.nav-visible
+    #nav
+      transition: all .5s
+      transform: translate3d(0, 100%, 0)
+
+    & + .layout
+      & > .aside-content > .sticky_layout
+        top: 70px
+        transition: top .5s
+
+// css hack
+// all browser in ios and safari in all apple device
+_::-webkit-full-page-media,
+_:future,
+:root #page-header.full_page
+  background-attachment: scroll !important
+
+#page
+  h1.page-title
+    margin: .4rem 0 1rem
+
+// for not top_img
+#post
+  & > #post-info
+    margin-bottom: 1.5rem
+
+    .post-title
+      padding-bottom: .2rem
+      border-bottom: 1px solid var(--light-grey)
+      color: var(--text-highlight-color)
+
+      .post-edit-link
+        float: right
+
+    #post-meta,
+    #post-meta a
+      color: #78818a
 
 #post-info
-  #post-title
+  .post-title
+    @extend .limit-more-line
     margin-bottom: .4rem
-    font-size: 2.15em
+    color: var(--white)
+    font-weight: normal
+    font-size: 2.5em
+    line-height: 1.5
+    -webkit-line-clamp: 3
 
     +maxWidth768()
       font-size: 1.72em
 
-    .posttitle
-      @extend .limit-more-line
-      color: var(--white)
-      line-height: 1.5
-      -webkit-line-clamp: 3
+    .post-edit-link
+      padding-left: .5rem
 
   #post-meta
     color: var(--light-grey)
@@ -180,30 +242,6 @@
       time
         display: none
 
-// for not top_img
-#post
-  & > #post-info
-    margin-bottom: 1.5rem
-
-    .posttitle
-      padding-bottom: .2rem
-      border-bottom: 1px solid var(--light-grey)
-      color: var(--text-highlight-color)
-
-[data-theme='light']
-  #post
-    #post-info
-      #post-meta,
-      #post-meta a
-        color: #78818a
-
-// css hack
-// all browser in ios and safari in all apple device
-_::-webkit-full-page-media,
-_:future,
-:root #page-header.full_page
-  background-attachment: scroll !important
-
 #nav
   position: absolute
   top: 0
@@ -220,10 +258,6 @@ _:future,
 
   +maxWidth768()
     padding: 0 16px
-
-  &:not(.fixed)
-    #menus
-      padding-right: 0 !important
 
   &.show
     opacity: 1
@@ -244,27 +278,6 @@ _:future,
 
     &:hover
       color: var(--white)
-
-  &.fixed
-    position: fixed
-    top: -60px
-    z-index: 91
-    background: rgba(255, 255, 255, .8)
-    box-shadow: 0 5px 6px -5px alpha($grey, .6)
-    transition: transform .2s ease-in-out, opacity .2s ease-in-out
-
-    a,
-    #site-name,
-    #toggle-menu
-      color: var(--font-color)
-      text-shadow: none
-
-      &:hover
-        color: $light-blue
-
-  &.visible
-    transition: all .5s
-    transform: translate3d(0, 100%, 0)
 
   #site-name
     text-shadow: .1rem .1rem .2rem rgba($dark-black, .15)
@@ -289,22 +302,6 @@ _:future,
       i.expand
         padding: 4px
         transition: transform .3s
-
-      & > a
-        &:after
-          position: absolute
-          bottom: 0
-          left: 0
-          z-index: -1
-          width: 0
-          height: 3px
-          background-color: lighten($theme-color, 30%)
-          content: ''
-          transition: all .3s ease-in-out
-
-        &:hover
-          &:after
-            width: 100%
 
       .menus_item_child
         position: absolute
@@ -335,8 +332,8 @@ _:future,
             display: inline-block
             padding: .3rem .7rem
             width: 100%
-            color: var(--font-color)
-            text-shadow: none
+            color: var(--font-color) !important
+            text-shadow: none !important
 
   &.hide-menu
     #toggle-menu
@@ -346,12 +343,15 @@ _:future,
         font-size: inherit
 
     .menus_items
+      position: absolute
+      left: 0
+      visibility: hidden
+      opacity: 0
+
+    #search-button span
       display: none !important
 
-    #search_button span
-      display: none !important
-
-  #search_button
+  #search-button
     display: inline
     padding: 0 0 0 .7rem
 
@@ -361,3 +361,19 @@ _:future,
     text-shadow: .05rem .05rem .1rem rgba($dark-black, .3)
     font-size: .78em
     cursor: pointer
+
+    &:not(.child)
+      &:after
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: -1
+        width: 0
+        height: 3px
+        background-color: lighten($theme-color, 30%)
+        content: ''
+        transition: all .3s ease-in-out
+
+      &:hover
+        &:after
+          width: 100%

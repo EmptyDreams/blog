@@ -1,31 +1,51 @@
 if hexo-config('readmode')
-  [data-theme='light']
-    .read-mode
-      --font-color: #4c4948
-      --readmode-light-color: #fff
-      --white: #4c4948
-      --light-grey: #4c4948
-      --gray: #d6dbdf
-      --hr-border: #d6dbdf
-      --hr-before-color: darken(#d6dbdf, 10)
-      -highlight-bg: #f7f7f7
+  .read-mode
+    --font-color: #4c4948
+    --readmode-light-color: #fff
+    --white: #4c4948
+    --light-grey: #4c4948
+    --gray: #d6dbdf
+    --hr-border: #d6dbdf
+    --hr-before-color: darken(#d6dbdf, 10)
+    --highlight-bg: #f7f7f7
+    --exit-btn-bg: #C0C0C0
+    --exit-btn-color: #fff
+    --exit-btn-hover: darken(#C0C0C0, 20)
 
   [data-theme='dark']
     .read-mode
-      --font-color: rgba(255, 255, 255, .6)
+      --font-color: rgba(255, 255, 255, .7)
       --readmode-light-color: #0d0d0d
-      --white: rgba(255, 255, 255, .8)
-      --light-grey: rgba(255, 255, 255, .6)
-      --gray: rgba(255, 255, 255, .6)
-      --hr-border: rgba(255, 255, 255, .3)
-      --hr-before-color: rgba(255, 255, 255, .6)
-      -highlight-bg: #171717
+      --white: rgba(255, 255, 255, .9)
+      --light-grey: rgba(255, 255, 255, .7)
+      --gray: rgba(255, 255, 255, .7)
+      --hr-border: rgba(255, 255, 255, .5)
+      --hr-before-color: rgba(255, 255, 255, .7)
+      --highlight-bg: #171717
+      --exit-btn-bg: #1f1f1f
+      --exit-btn-color: rgba(255, 255, 255, .9)
+      --exit-btn-hover: lighten(#1f1f1f, 20)
 
   .read-mode
     background: var(--readmode-light-color)
 
-    #body-wrap
-      padding-left: 0 !important
+    .exit-readmode
+      position: fixed
+      top: 30px
+      right: 30px
+      width: 40px
+      height: 40px
+      border-radius: 8px
+      background: var(--exit-btn-bg)
+      color: var(--exit-btn-color)
+      font-size: 16px
+      transition: background .3s
+
+      &:hover
+        background: var(--exit-btn-hover)
+
+    #aside-content
+      display: none
 
     #page-header.post-bg
       background-color: transparent
@@ -35,40 +55,28 @@ if hexo-config('readmode')
         opacity: 0
 
       & > #post-info
-        padding: 0
         text-align: center
 
-    .layout_post
-      > #post
-        background: transparent
-        box-shadow: none
+    #post
+      margin: 0 auto
+      background: transparent
+      box-shadow: none
 
-        &:hover
-          box-shadow: none
+      &:hover
+        box-shadow: none
 
     & > canvas
       display: none !important
 
     .highlight-tools,
     #footer,
-    #post > *:not(:first-child),
-    #to_comment,
-    #sidebar,
-    #toggle-sidebar,
-    #mobile-toc-button,
+    #post > *:not(#post-info):not(.post-content),
     #nav,
     .post-outdate-notice,
-    #web_bg
+    #web_bg,
+    #rightside,
+    .not-top-img
       display: none !important
-
-    if !hexo-config('chat_btn')
-      #chatra,
-      #tidio-chat-code,
-      #tidio-chat,
-      #daodream-container,
-      .gitter-chat-embed,
-      .gitter-open-chat-button
-        display: none !important
 
     #article-container
       a
@@ -76,7 +84,7 @@ if hexo-config('readmode')
 
       pre,
       .highlight:not(.js-file-line-container)
-        background: var(-highlight-bg) !important
+        background: var(--highlight-bg) !important
 
         *
           color: var(--font-color) !important
@@ -155,30 +163,32 @@ if hexo-config('readmode')
         border-left: .2rem solid var(--gray)
         background-color: var(--readmode-light-color)
 
+      kbd
+        border: 1px solid var(--gray)
+        background-color: transparent
+        box-shadow: none
+        color: var(--font-color)
+
       .hide-toggle
         border: 1px solid var(--gray) !important
 
       .hide-button,
-      .btn-beautify
+      .btn-beautify,
+      .hl-label
+        border: 1px solid var(--gray) !important
         background: var(--readmode-light-color) !important
         color: var(--font-color) !important
-
-      .btn-beautify
-        border: 1px solid var(--gray) !important
 
       .button--animated:before
         background: var(--readmode-light-color) !important
 
-      .hide-inline,
-      .hide-block
-        & >.hide-button
-          border: 1px solid var(--gray)
-
-        & > .button--animated:before
-          background: var(--readmode-light-color)
-
       .note
         border: 2px solid var(--gray)
+        border-left-color: var(--gray) !important
         filter: none
-        background-color: var(--readmode-light-color)
+        background-color: var(--readmode-light-color) !important
         color: var(--font-color)
+
+        &:before,
+        .note-icon
+          color: var(--font-color)

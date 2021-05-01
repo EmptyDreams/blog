@@ -1,20 +1,27 @@
-#aside_content.aside_content
-  if theme.aside.card_author.enable
-    include ./card_author.pug
-  .sticky_layout
-    if theme.aside.card_announcement.enable
-      include ./card_announcement.pug
-    if theme.aside.card_recent_post.enable
-      include ./card_recent_post.pug
-    if theme.newest_comments.enable
-      include ./card_newest_comment.pug
-    if theme.ad && theme.ad.aside
-      include ./card_ad.pug
-    if theme.aside.card_categories.enable
-      include ./card_categories.pug
-    if theme.aside.card_tags.enable
-      include ./card_tags.pug
-    if theme.aside.card_archives.enable
-      include ./card_archives.pug
-    if theme.aside.card_webinfo.enable
-      include ./card_webinfo.pug
+#aside-content.aside-content
+  //- post
+  if is_post()
+    if showToc && theme.toc.style_simple
+      .sticky_layout
+        include ./card_post_toc.pug
+    else
+      !=partial('includes/widget/card_author', {}, {cache: true})
+      !=partial('includes/widget/card_announcement', {}, {cache: true})
+      .sticky_layout
+        if showToc
+          include ./card_post_toc.pug
+        !=partial('includes/widget/card_recent_post', {}, {cache: true})
+        !=partial('includes/widget/card_ad', {}, {cache: true})
+  else
+    //- page
+    !=partial('includes/widget/card_author', {}, {cache: true})
+    !=partial('includes/widget/card_announcement', {}, {cache: true})
+    .sticky_layout
+      !=partial('includes/widget/card_recent_post', {}, {cache: true})
+      !=partial('includes/widget/card_ad', {}, {cache: true})
+      !=partial('includes/widget/card_newest_comment', {}, {cache: true})
+      !=partial('includes/widget/card_categories', {}, {cache: true})
+      !=partial('includes/widget/card_tags', {}, {cache: true})
+      !=partial('includes/widget/card_archives', {}, {cache: true})
+      !=partial('includes/widget/card_webinfo', {}, {cache: true})
+      !=partial('includes/widget/card_self', {}, {cache: true})

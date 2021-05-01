@@ -1,7 +1,3 @@
-sidebar:
-  catalog: 目錄
-  have_read: 你已經讀了
-
 footer:
   framework: 框架
   theme: 主題
@@ -17,6 +13,8 @@ page:
   category: 分類
   archives: 歸檔
 
+card_post_count: 條評論
+
 sticky: 置頂
 no_title: 無題
 
@@ -24,7 +22,7 @@ post:
   created: 發表於
   updated: 更新於
   wordcount: 字數總計
-  min2read: 閲讀時長
+  min2read: 閱讀時長
   min2read_unit: 分鐘
   page_pv: 閱讀量
   comments: 評論數
@@ -35,6 +33,7 @@ post:
     copyright_content: '本部落格所有文章除特別聲明外，均採用
       <a href="%s" target="_blank">%s</a> 許可協議。轉載請註明來自 <a href="%s" target="_blank">%s</a>！'
   recommend: 相關推薦
+  edit: 編輯
 
 search: 搜尋
 algolia_search:
@@ -46,8 +45,6 @@ local_search:
   label: 本地搜尋
   input_placeholder: 搜尋文章
   hits_empty: '找不到您查詢的內容：${query}'
-  powered: '提供支援'
-  by: 由
 
 pagination:
   prev: 上一篇
@@ -77,9 +74,14 @@ aside:
     site_pv_name: 本站總訪問量
   more_button: 檢視更多
   card_newest_comments:
-    heading: 最新評論
-    loading_text: 正在加載中...
-    error: 無法獲取資料，請確認相關配置是否正確
+    headline: 最新評論
+    loading_text: 正在載入中...
+    error: 無法獲取評論，請確認相關配置是否正確
+    zero: 沒有評論
+    image: 圖片
+    link: 連結
+    code: 代碼
+  card_toc: 目錄
 
 date_suffix:
   just: 剛剛
@@ -93,12 +95,15 @@ share: 分享
 
 rightside:
   readmode_title: 閱讀模式
+  font_plus_title: 放大字型
+  font_minus_title: 縮小字型
   translate_title: 簡繁轉換
   night_mode_title: 淺色和深色模式轉換
   back_to_top: 回到頂部
   toc: 目錄
   scroll_to_comment: 直達評論
   setting: 設定
+  aside: 單欄和雙欄切換
 
 copy_copyright:
   author: 作者

@@ -2,13 +2,12 @@
  * Butterfly
  * @example
  *  page_description()
- *  injectHtml(data)
  *  cloudTags(source, minfontsize, maxfontsize, limit)
  */
 
 'use strict'
 
-const { stripHTML, escapeHTML } = require('hexo-util')
+const { stripHTML, escapeHTML, prettyUrls } = require('hexo-util')
 const crypto = require('crypto')
 
 hexo.extend.helper.register('page_description', function () {
@@ -16,20 +15,11 @@ hexo.extend.helper.register('page_description', function () {
   let description = page.description || page.content || page.title || config.description
 
   if (description) {
-    description = escapeHTML(stripHTML(description).substring(0, 200)
+    description = escapeHTML(stripHTML(description).substring(0, 150)
       .trim()
     ).replace(/\n/g, ' ')
     return description
   }
-})
-
-hexo.extend.helper.register('injectHtml', function (data) {
-  let result = ''
-  if (!data) return ''
-  for (let i = 0; i < data.length; i++) {
-    result += data[i]
-  }
-  return result
 })
 
 hexo.extend.helper.register('cloudTags', function (options = {}) {
@@ -64,19 +54,19 @@ hexo.extend.helper.register('cloudTags', function (options = {}) {
   return result
 })
 
-hexo.extend.helper.register('urlNoIndex', function () {
-  const { permalink } = hexo.config
-  let url = this.url.replace(/index\.html$/, '')
-  if (!permalink.endsWith('.html')) {
-    url = url.replace(/\.html$/, '')
-  }
-  return url
+hexo.extend.helper.register('urlNoIndex', function (url = null) {
+  return prettyUrls(url || this.url, { trailing_index: false, trailing_html: false })
 })
 
 hexo.extend.helper.register('md5', function (path) {
   return crypto.createHash('md5').update(decodeURI(this.url_for(path))).digest('hex')
 })
 
-hexo.extend.helper.register('get_hexo_version', function () {
-  return hexo.version
+hexo.extend.helper.register('injectHtml', function (data) {
+  let result = ''
+  if (!data) return ''
+  for (let i = 0; i < data.length; i++) {
+    result += data[i]
+  }
+  return result
 })

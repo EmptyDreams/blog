@@ -59,6 +59,9 @@
   .next-post
     width: 50%
 
+    +maxWidth768()
+      width: 100%
+
     a
       position: relative
       display: block
@@ -72,10 +75,5 @@
         transform: scale(1.1)
 
   &.pagination-post
-    margin: 2rem 0 !important
+    margin-top: 2rem
     background: $dark-black
-
-+maxWidth768()
-  .prev-post,
-  .next-post
-    width: 100% !important

@@ -5,7 +5,7 @@ if site.data.valine
 script.
   function loadValine () {
     function initValine () {
-      const initData = {
+      const valine = new Valine(Object.assign({
         el: '#vcomment',
         appId: '#{theme.valine.appId}',
         appKey: '#{theme.valine.appKey}',
@@ -20,22 +20,18 @@ script.
         emojiMaps: !{emojiMaps},
         enableQQ: #{theme.valine.enableQQ},
         path: window.location.pathname,
-      }
-
-      if (!{Boolean(theme.valine.requiredFields)}) { 
-        initData.requiredFields= ('!{theme.valine.requiredFields}'.split(','))
-      }
-
-      const valine = new Valine(initData)
+        requiredFields: [!{theme.valine.requiredFields ? JSON.stringify(theme.valine.requiredFields).split(',') : ''}],
+        visitor: #{theme.valine.visitor}
+      }, !{JSON.stringify(theme.valine.option)}))
     }
 
     if (typeof Valine === 'function') initValine() 
-    else $.getScript('!{url_for(theme.CDN.valine)}', initValine)
+    else getScript('!{url_for(theme.CDN.valine)}').then(initValine)
   }
 
   if ('!{theme.comments.use[0]}' === 'Valine' || !!{theme.comments.lazyload}) {
-    if (!{theme.comments.lazyload}) btf.loadComment(document.querySelector('#vcomment'),loadValine)
-    else setTimeout(() => loadValine(), 0)
+    if (!{theme.comments.lazyload}) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
   } else {
     function loadOtherComment () {
       loadValine()
