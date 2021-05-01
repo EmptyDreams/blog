@@ -5,3 +5,5 @@ db.json
 node_modules/
 public/
 .deploy*/
+资源文档/
+themes/butterfly/.github/
