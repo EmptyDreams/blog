@@ -7,17 +7,15 @@
 
 :root {
   --hl-color: #d3af86;
-  --hl-bg: #221a0f;
+  --hl-bg: #171717;
   --hltools-bg: #1a1a1a;
   --hltools-color: #a3adaf;
   --hlnumber-bg: #272626;
   --hlnumber-color: #a3adaf;
-  --hlscrollbar-bg: #171717;
-  --hlexpand-bg: #171717;
 }
 
 #article-container figure.highlight .hljs {
-  background: #221a0f;
+  background: #171717;
   color: #d3af86;
 }
 
