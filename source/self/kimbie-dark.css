@@ -8,10 +8,10 @@
 :root {
   --hl-color: #d3af86;
   --hl-bg: #221a0f;
-  --hltools-bg: #321a0f;
-  --hltools-color: #fff;
-  --hlnumber-bg: #221a0f;
-  --hlnumber-color: #fff;
+  --hltools-bg: #1a1a1a;
+  --hltools-color: #a3adaf;
+  --hlnumber-bg: #272626;
+  --hlnumber-color: #a3adaf;
   --hlscrollbar-bg: #d3af86;
   --hlexpand-bg: #d3af86;
 }
