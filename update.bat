@@ -1,8 +1,8 @@
 @echo off
-echo æ·»åŠ æ–‡ä»¶
+echo Ìí¼ÓÎÄ¼ş
 call bat/add.bat
-echo åŒæ­¥æ–‡ä»¶
+echo Í¬²½ÎÄ¼ş
 call bat/commit.bat
-echo æ¨é€æ›´æ–°
+echo ÍÆËÍ¸üĞÂ
 call bat/push.bat
-pause < æ¨é€å®Œæ¯•
+pause < ÍÆËÍÍê±Ï
