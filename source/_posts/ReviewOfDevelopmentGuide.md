@@ -10,11 +10,9 @@ cover: https://cdn.jsdelivr.net/gh/EmptyDreams/resources/b2.png
 description: 经过漫长的等待终于拿到书了，迫不及待地大致的把书翻看了一遍，今天就简单的谈一下阅读时发现的问题
 ---
 
-&emsp;&emsp;经过漫长的等待终于拿到书了，迫不及待地大致的把书翻看了一遍，今天就简单的谈一下阅读时发现的问题。
+&emsp;&emsp;拿到书后迫不及待的大概的把书翻看了一遍，总体来说不太满意，感觉内容中难度上卡到了入门和熟练之间，读起来比较捉急，既没有真的把入门的东西讲全，也没有提到高级的东西。
 
-&emsp;&emsp;拿到书后迫不及待的大概的把书翻看了一遍，总体来说不太满意，感觉内容中难度上卡到了入门和熟练之间，读起来比较捉急，即没有真的把入门的东西讲全，也没有提到高级的东西。
-
-&emsp;&emsp;按照个人的建议，这本书并不适合Java和Forge的深度学习，学习Forge推荐阅读4z的[Minecraft 1.8.9 FML Mod 开发教程](https://fmltutor.ustc-zzzz.net/)以及[先驱者教程](https://harbinger.covertdragon.team)，其中4z的教程版本较老但是较为完善，先驱者是1.12.2版本但是内容不完善同时对新手不太友好，所以可以两个搭配食用。学习Java的话在文章尾部笔者罗列了一些书籍，读者可以选择性的阅读。
+&emsp;&emsp;按照个人的意见来说，这本书并不适合Java和Forge的深度学习，学习Forge推荐阅读4z的[Minecraft 1.8.9 FML Mod 开发教程](https://fmltutor.ustc-zzzz.net/)以及[先驱者教程](https://harbinger.covertdragon.team)，其中4z的教程版本较老但是较为完善，先驱者是1.12.2版本但是内容不完善同时对新手不太友好，所以可以两个搭配食用。学习Java的话在文章尾部笔者罗列了一些书籍，读者可以选择性的阅读。
 
 &emsp;&emsp;同时按照我个人的看法，开始写模组之前一定要熟练掌握Java编程，不然开发过程中会遇到很多问题。
 
