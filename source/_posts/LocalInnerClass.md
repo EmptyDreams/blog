@@ -1,5 +1,6 @@
 ---
 title: 个人对局部内部类的一些理解
+date: 2020-01-15 20:31:38
 categories:
 	- Java
 tags: 
