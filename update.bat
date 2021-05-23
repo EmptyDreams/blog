@@ -5,4 +5,4 @@ echo 同步文件
 call bat/commit.bat
 echo 推送更新
 call bat/push.bat
-pause < 推送完毕
+pause
