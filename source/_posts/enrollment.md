@@ -5,6 +5,6 @@ categories:
 	- Java
 tags:
 	- Java
-cover: https://cdn.jsdelivr.net/gh/EmptyDreams/resources/
+cover: https://cdn.jsdelivr.net/gh/EmptyDreams/resources/b3.png
 description: 想要学习Java的小伙伴进来看一看哦~~~
 ---
