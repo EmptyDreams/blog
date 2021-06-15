@@ -5,7 +5,7 @@ categories:
 	- Java
 tags:
 	- Java
-cover: https://cdn.jsdelivr.net/gh/EmptyDreams/resources/b3.png
+cover: https://cdn.jsdelivr.net/gh/EmptyDreams/resources/b3.jpg
 description: 想要学习Java的小伙伴进来看一看哦~~~
 ---
 
@@ -55,4 +55,6 @@ description: 想要学习Java的小伙伴进来看一看哦~~~
 </ul>
 
 # 报名方式
-&emsp;&emsp;发送邮件至<minedreams_ed@outlook.com>
+&emsp;&emsp;发送邮件至<minedreams_ed@outlook.com>。
+
+&emsp;&emsp;记得在邮件中说出你的优势，这样更容易被选中哦~~~
